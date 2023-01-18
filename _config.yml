@@ -1,0 +1,5 @@
+name: My Github webpage
+description: My github webpage
+url: https://github.com/sebastianrowan/sebastianrowan.github.io
+markdown: kramdown
+theme: minima
