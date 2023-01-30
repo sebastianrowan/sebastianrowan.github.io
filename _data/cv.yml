@@ -1,0 +1,92 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Sebastian Rowan
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD
+      institution: University of New Hampshire, Durham, NH
+      year: 2024 (expected)
+      description:
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
+    - title: Bachelor of Science
+      institution: University of New Hampshire, Durham, NH
+      year: 2016
+      description:
+        - Description 1.
+        - Description 2.
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: ORISE Graduate Research Fellow
+      institution: U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory
+      year: 2020 - Present
+      description:
+        - Description 1.
+        - Description 2.
+
+    - title: Teaching and Research Assistant
+      institution: University of New Hampshire
+      year: 2018-2020
+      description:
+        - Description 1.
+        - Description 2.
+
+    - title: Civil Engineer 2
+      institution: New Hampshire Department of Transportation
+      year: 2016-2018
+
+
+- title: Open Source Projects
+  type: time_table
+  contents:
+    - title: <a href="https://github.com/sebastianrowan/get_nsi_data">NSI Data QGIS Plugin</a>
+      year: 2022 - Present
+      description: A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.
+
+    - title: <a href="https://github.com/sebastianrowan/useeio_py">useeio_py</a>
+      year: 2023 - Present
+      description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for 
+      building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models>USEEIO models</a>.
+
+#- title: Honors and Awards
+#  type: time_table
+#  contents:
+#    - year: 1921
+#      items: 
+#        - Nobel Prize in Physics 
+#       - Matteucci Medal
+#    - year: 2029
+#      items: 
+#        - Max Planck Medal
+
+- title: Academic Interests
+  type: nested_list
+  contents:
+    - title: Flood Risk Assessment.
+      items: 
+        - Quantification of social effects of flooding (e.g. impacts to mental health)
+        #- Description 2
+    - title: Sustainability.
+      items:
+        #- Description 1.
+        #- Description 2.
+    - title: Equity.
+      items:
+        #- Description 1.
+        #- Description 2.
+
+- title: Other
+  type: list
+  contents:
+    - <u>Programming Languages:</u> Python, R, MATLAB, SQL
+    - <u>Hobbies:</u> Cooking, Snowboarding, Data analysis
