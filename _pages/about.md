@@ -3,10 +3,10 @@ layout: about
 title: about
 permalink: /
 subtitle: >
-  Ph.D. Candidate
-  <a href='https://sites.google.com/view/moresearchgroup'>University of New Hampshire Department of Civil and Environmental Engineering</a>.
-
-  ORISE Graduate Research Fellow
+  Ph.D. Candidate <br>
+  <a href='https://sites.google.com/view/moresearchgroup'>University of New Hampshire Department of Civil and Environmental Engineering</a>. <br>
+  <br>
+  ORISE Graduate Research Fellow<br>
   <a href='https://www.erdc.usace.army.mil/Locations/CHL/'>U.S. Army Corps of Engineers Coastal and Hydraulics Laboratory</a>
 
 profile:
