@@ -11,18 +11,11 @@
       institution: University of New Hampshire, Durham, NH
       year: 2024 (expected)
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
+        - Dissertation Title - Estimating the greenhouse gas emissions of flood damages and flood risk management projects (Working Title).
+        - Dissertation Advisor - Dr. Weiwei Mo
     - title: Bachelor of Science
       institution: University of New Hampshire, Durham, NH
       year: 2016
-      description:
-        - Description 1.
-        - Description 2.
 
 - title: Experience
   type: time_table
@@ -31,17 +24,16 @@
       institution: U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory
       year: 2020 - Present
       description:
-        - Description 1.
-        - Description 2.
 
-    - title: Teaching and Research Assistant
+    - title: Research and Teaching Assistant
       institution: University of New Hampshire
       year: 2018-2020
       description:
-        - Description 1.
-        - Description 2.
+        - Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)
+        - CEE 502 - Project Engineering
+        - CEE 705 - Introduction to Sustainable Engineering
 
-    - title: Civil Engineer 2
+    - title: Civil Engineer II
       institution: New Hampshire Department of Transportation
       year: 2016-2018
 
@@ -50,11 +42,11 @@
   type: time_table
   contents:
     - title: <a href="https://github.com/sebastianrowan/get_nsi_data">NSI Data QGIS Plugin</a>
-      year: 2022 - Present
+      year: Active
       description: A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.
 
     - title: <a href="https://github.com/sebastianrowan/useeio_py">useeio_py</a>
-      year: 2023 - Present
+      year: Active
       description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models">USEEIO models</a>.
 
 #- title: Honors and Awards
@@ -71,15 +63,14 @@
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Flood Risk Assessment.
+    - title: Flood Risk Assessment
       items: 
-        - Quantification of social effects of flooding (e.g. impacts to mental health)
-        #- Description 2
-    - title: Sustainability.
+        #- Description 
+    - title: Sustainability
       items:
         #- Description 1.
         #- Description 2.
-    - title: Equity.
+    - title: Equity
       items:
         #- Description 1.
         #- Description 2.
