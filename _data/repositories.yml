@@ -1,8 +1,4 @@
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - sebastianrowan/get_nsi_data
+  - sebastianrowan/useeio_py
+  - sebastianrowan/connect_n
