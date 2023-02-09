@@ -3,17 +3,21 @@
   contents:
     - name: Full Name
       value: Sebastian Rowan
+    - name: Contact
+      value: sebastian.rowan@unh.edu
+    - name: Languages
+      value: English (native), Spanish (intermediate), German (beginner)
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
+    - title: Ph.D. Civil and Environmental Engineering
       institution: University of New Hampshire, Durham, NH
       year: 2024 (expected)
       description:
-        - Dissertation Title - Estimating the greenhouse gas emissions of flood damages and flood risk management projects (Working Title).
+        - Dissertation Title - Assessment of the carbon footprint of flood damages and flood risk management projects (Working Title).
         - Dissertation Advisor - Dr. Weiwei Mo
-    - title: Bachelor of Science
+    - title: B.S. Environmental Engineering
       institution: University of New Hampshire, Durham, NH
       year: 2016
 
