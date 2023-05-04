@@ -45,6 +45,10 @@
 - title: Open Source Projects
   type: time_table
   contents:
+    - title: <a href="https://github.com/sebastianrowan/svibuildr">sviBuildr</a>
+      year: Active
+      description: An R package that allows users to download or construct the <a href="https://www.atsdr.cdc.gov/placeandhealth/svi/index.html">Social Vulnerability Index</a> as a tidyverse dataframe or as simple features dataframe for spatial analyses.
+
     - title: <a href="https://github.com/sebastianrowan/get_nsi_data">NSI Data QGIS Plugin</a>
       year: Active
       description: A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.
@@ -83,4 +87,4 @@
   type: list
   contents:
     - <u>Programming Languages:</u> Python, R, MATLAB, SQL
-    - <u>Hobbies:</u> Cooking, Snowboarding, Data analysis
+    - <u>Hobbies:</u> Cooking, Snowboarding, Data Analysis
