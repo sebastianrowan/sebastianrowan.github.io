@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+<link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+
+
+
+<title>Estimating the Greenhouse Gas Emissions of Flood Damages</title>
+
+
+
+
+
+
+<style>
+@page {
+size: 48in 36in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 45px;
+width: 48in;
+height: 36in;
+padding: 0;
+text-align: justify;
+font-family: Source Sans Pro;
+}
+.poster_wrap {
+width: 48in;
+height: 36in;
+padding: 0cm;
+}
+.title_container {
+width: calc(100% - 0.25in - 0.25in);
+height: calc(15% - 0.25in - 0.25in);
+overflow: hidden;
+background-color: #003591;
+border: 0.25in solid #001d52;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #003591;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #003591;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Source Sans Pro;
+}
+/* unvisited link */
+a:link {
+color: #cb4d0b;
+text-decoration: none;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #cb4d0b;
+text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+color: #cb4d0b;
+text-decoration: none;
+}
+
+/* selected link */
+a:active {
+color: #cb4d0b;
+text-decoration: none;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #003591;
+-moz-column-rule-color: #003591;
+column-rule-color: #003591;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000;
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: 48in;
+height: calc(100% - 17%);
+padding-top: calc(36in * 0.01);
+padding-bottom: calc(36in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #A3A9AC;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 0;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 0cm solid #003591;
+background-color: #001d52;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #003591;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r, pre.sourceCode.python {
+background-color: #ffffff20;
+border: solid #001d52 1mm;
+border-radius: 0.5em;
+padding: 4mm;
+margin: auto;
+margin-top: 1em;
+margin-bottom: 1em;
+/* align-items: center; */
+}
+div.sourceCode {
+background-color: transparent;
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+}
+code.sourceCode.r, code.sourceCode.python {
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+code {
+font-size: 25pt;
+font-family: monospace;
+background-color: #001d5224;
+color: #001d52;
+padding: 1.2mm;
+line-height: 1;
+border-radius: 2mm;
+}
+.caption {
+font-size: 20pt;
+}
+.table caption {
+font-size: 20pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #001d5224;
+color: #003591;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+color: #000000
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+<img src=unh_logo.png style="width: 80%">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Estimating the Greenhouse Gas Emissions of Flood Damages</h1>
+<h3 id="author">Sebastian Rowan<sup>1,2</sup>, Elissa Yeates<sup>2</sup>, Weiwei Mo<sup>1</sup></h3>
+<h5 id="affiliation"><sup>1</sup> Department of Civil and Environmental Engineering, University of New Hampshire; <sup>2</sup> Coastal and Hydraulics Laboratory, Engineer Research and Development Center, U.S. Army Corps of Engineers</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+<img src=erdc_logo.png style="width: 80%">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<style type="text/css">
+.small {
+    font-size: 24px;
+    margin-right: 4mm;
+    margin-left: 4mm;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+}
+
+.small p {
+  margin: 0px
+}
+
+.header-section-number::after {
+    content: "."
+}
+  
+.poster_body h2 {
+  font-weight: bold;
+  margin-top: 2px;
+  margin-bottom: 20px
+}
+
+strong {
+  color: #003591
+}
+
+#case-study-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: flex-start
+}
+
+#cs-img-div {
+  width: 50%;
+  padding-top: 10px
+}
+
+#cs-img-div p {
+  margin: 0px
+}
+
+#cs-tbl-div {
+  width: 50%;
+}
+</style>
+<div id="overview" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Overview</h1>
+<p><strong>Problem</strong>: The effects of floods and storms on greenhouse gas (GHG) emissions are not well-understood, and planners lack tools to incorporate them into decision-making for flood risk management (FRM) projects. A method to estimate the GHG emissions associated with flood events is needed to develop more sustainable FRM strategies.</p>
+<p><strong>Objective</strong>: Develop and demonstrate a framework to estimate the life-cycle GHG emissions that result from flood damages to single-family residential structures.</p>
+<p><strong>Methods</strong>: Use component-level depth-damage estimates to generate economic demand vectors for five residential structure types across a range of flood depths. Input demand vectors into U.S. EPA’s USEEIO LCIA model to produce structure-level depth-emissions curves for each structure type. Apply framework to Mississippi River Valley case study.</p>
+<p><strong>Results</strong>: Depth-emissions curves were produced for five residential structure types. Case study results show that damages from the 100-year flood could produce 1.85 - 2.66 x 10<sup>8</sup> kg CO<sub>2eq</sub> in the Burlington-Davenport region and 1.11 - 3.01 x 10<sup>8</sup> kg CO<sub>2eq</sub> in the Paducah-Cairo region.</p>
+</div>
+<div id="data-and-methods" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Data and Methods</h1>
+<div id="depth-emissions-curves" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Depth-Emissions Curves</h2>
+<p><strong>Depth-damage estimates</strong> for contents and structural components for 5 residential structure types from USACE report produced based on data from 39 homeowner surveys and panel of 9 industry experts<span class="citation"><sup>1</sup></span>.</p>
+<div id="tbl1" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+  
+  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 24px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 90%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="90%" bgcolor="#FFFFFF">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="11" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: left; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal; color: #003591;" bgcolor="#FFFFFF" align="left">Sample Expert Opinion Depth-Damage Estimates for One-Story on Pier Structure</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings" style="border-top-style: none; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left"></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="10" scope="colgroup" id="Flood depth relative to first floor elevation (ft)" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; padding-top: 0; padding-bottom: 0; padding-left: 4px; text-align: center; padding-right: 0;" bgcolor="#FFFFFF" align="center">
+        <span class="gt_column_spanner" style="border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; vertical-align: bottom; padding-top: 5px; padding-bottom: 5px; overflow-x: hidden; display: inline-block; width: 100%;">Flood depth relative to first floor elevation (ft)</span>
+      </th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="-1" bgcolor="#FFFFFF" valign="bottom" align="right">-1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="0" bgcolor="#FFFFFF" valign="bottom" align="right">0</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="1" bgcolor="#FFFFFF" valign="bottom" align="right">1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="2" bgcolor="#FFFFFF" valign="bottom" align="right">2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="4" bgcolor="#FFFFFF" valign="bottom" align="right">4</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="6" bgcolor="#FFFFFF" valign="bottom" align="right">6</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="8" bgcolor="#FFFFFF" valign="bottom" align="right">8</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="10" bgcolor="#FFFFFF" valign="bottom" align="right">10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="12" bgcolor="#FFFFFF" valign="bottom" align="right">12</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="15" bgcolor="#FFFFFF" valign="bottom" align="right">15</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr class="gt_group_heading_row">
+      <th colspan="11" class="gt_group_heading" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-top-style: none; border-top-width: 2px; border-top-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Contents" bgcolor="#FFFFFF" valign="middle" align="left">Contents</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Bookcase/Entertainment Center</th>
+<td headers="Contents stub_1_1 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">0</td>
+<td headers="Contents stub_1_1 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">97</td>
+<td headers="Contents stub_1_1 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">313</td>
+<td headers="Contents stub_1_1 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">467</td>
+<td headers="Contents stub_1_1 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,427</td>
+<td headers="Contents stub_1_1 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,490</td>
+<td headers="Contents stub_1_1 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,490</td>
+<td headers="Contents stub_1_1 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,490</td>
+<td headers="Contents stub_1_1 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,490</td>
+<td headers="Contents stub_1_1 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,490</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Couch/Sofa</th>
+<td headers="Contents stub_1_2 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Contents stub_1_2 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">104</td>
+<td headers="Contents stub_1_2 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td>
+<td headers="Contents stub_1_2 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,106</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Stereo Equipment</th>
+<td headers="Contents stub_1_3 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Contents stub_1_3 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">6</td>
+<td headers="Contents stub_1_3 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">35</td>
+<td headers="Contents stub_1_3 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">78</td>
+<td headers="Contents stub_1_3 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">251</td>
+<td headers="Contents stub_1_3 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">367</td>
+<td headers="Contents stub_1_3 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">367</td>
+<td headers="Contents stub_1_3 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">367</td>
+<td headers="Contents stub_1_3 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">367</td>
+<td headers="Contents stub_1_3 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">367</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Tables/Chairs</th>
+<td headers="Contents stub_1_4 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Contents stub_1_4 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">17</td>
+<td headers="Contents stub_1_4 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">90</td>
+<td headers="Contents stub_1_4 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">274</td>
+<td headers="Contents stub_1_4 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">274</td>
+<td headers="Contents stub_1_4 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">345</td>
+<td headers="Contents stub_1_4 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">356</td>
+<td headers="Contents stub_1_4 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">356</td>
+<td headers="Contents stub_1_4 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">356</td>
+<td headers="Contents stub_1_4 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">356</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="11" class="gt_group_heading" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-top-style: none; border-top-width: 2px; border-top-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Structure" bgcolor="#FFFFFF" valign="middle" align="left">Structure</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_5" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Bottom Cabinets</th>
+<td headers="Structure stub_1_5 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">0</td>
+<td headers="Structure stub_1_5 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">314</td>
+<td headers="Structure stub_1_5 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td>
+<td headers="Structure stub_1_5 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">2,746</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Exterior Wall/Siding</th>
+<td headers="Structure stub_1_6 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Structure stub_1_6 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Structure stub_1_6 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">429</td>
+<td headers="Structure stub_1_6 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,143</td>
+<td headers="Structure stub_1_6 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,771</td>
+<td headers="Structure stub_1_6 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,714</td>
+<td headers="Structure stub_1_6 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,229</td>
+<td headers="Structure stub_1_6 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,229</td>
+<td headers="Structure stub_1_6 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,229</td>
+<td headers="Structure stub_1_6 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,229</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Structural Frame</th>
+<td headers="Structure stub_1_7 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Structure stub_1_7 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">143</td>
+<td headers="Structure stub_1_7 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td>
+<td headers="Structure stub_1_7 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">679</td></tr>
+    <tr style="border-bottom: 2px solid #ffffff00;"><th id="stub_1_8" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Wall Insulation</th>
+<td headers="Structure stub_1_8 -1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">0</td>
+<td headers="Structure stub_1_8 0" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">137</td>
+<td headers="Structure stub_1_8 1" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">901</td>
+<td headers="Structure stub_1_8 2" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,109</td>
+<td headers="Structure stub_1_8 4" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,850</td>
+<td headers="Structure stub_1_8 6" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,124</td>
+<td headers="Structure stub_1_8 8" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,124</td>
+<td headers="Structure stub_1_8 10" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,124</td>
+<td headers="Structure stub_1_8 12" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,124</td>
+<td headers="Structure stub_1_8 15" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,124</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<p>We mapped items to specific industry with NAICS code and aggregated damage cost values by code to produce an economic demand vector for each flood depth.</p>
+<p><strong>USEEIO Model v2.0</strong> developed by U.S. EPA<span class="citation"><sup>2</sup></span> used to estimate the GHG emissions produced by the economic activity specified by a demand vector. We input demand vectors for flood depths from -1 to 15ft relative to first floor elevation (FFE) into the USEEIO model to produce depth-emissions curves for each structure type.</p>
+</div>
+<div id="case-study" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Case Study</h2>
+<div id="case-study-div">
+<div id="cs-img-div">
+<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="cs-table-div">
+<div id="tbl2" style="padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; overflow-x: auto; overflow-y: auto; width: auto; height: auto;">
+  
+  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 24px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 100%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="100%" bgcolor="#FFFFFF">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: left; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal; color: #003591;" bgcolor="#FFFFFF" align="left">Study Area Residential Structures Stats</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings" style="border-top-style: none; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3;">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: left;" bgcolor="#FFFFFF" valign="bottom" align="left"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="N" bgcolor="#FFFFFF" valign="bottom" align="right">N</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Mean Value" bgcolor="#FFFFFF" valign="bottom" align="right">Mean Value</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: normal; text-transform: uppercase; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: bottom; padding-top: 5px; padding-bottom: 6px; padding-left: 5px; padding-right: 5px; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="Mean Area (ft&lt;sup&gt;2&lt;/sup&gt;)" bgcolor="#FFFFFF" valign="bottom" align="right">Mean Area (ft<sup>2</sup>)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body" style="border-top-style: solid; border-top-width: 2px; border-top-color: #D3D3D3; border-bottom-style: solid; border-bottom-width: 2px; border-bottom-color: #D3D3D3;">
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-top-style: none; border-top-width: 2px; border-top-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Burlington, IA and Davenport, IA" bgcolor="#FFFFFF" valign="middle" align="left">Burlington, IA and Davenport, IA</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">One Story</th>
+<td headers="Burlington, IA and Davenport, IA stub_1_1 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">497,968</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_1 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">$324,477</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_1 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,463</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Two Story</th>
+<td headers="Burlington, IA and Davenport, IA stub_1_2 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">144,855</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_2 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$423,059</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_2 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,406</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Three Story</th>
+<td headers="Burlington, IA and Davenport, IA stub_1_3 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">19,382</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_3 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$462,411</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_3 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">2,684</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Mobile Home</th>
+<td headers="Burlington, IA and Davenport, IA stub_1_4 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">19,772</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_4 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$100,004</td>
+<td headers="Burlington, IA and Davenport, IA stub_1_4 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,186</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="4" class="gt_group_heading" style="padding-top: 8px; padding-bottom: 8px; padding-left: 5px; padding-right: 5px; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-top-style: none; border-top-width: 2px; border-top-color: #000000; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; text-align: left; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Paducah, KY and Cairo, IL" bgcolor="#FFFFFF" valign="middle" align="left">Paducah, KY and Cairo, IL</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_5" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">One Story</th>
+<td headers="Paducah, KY and Cairo, IL stub_1_5 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">260,484</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_5 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">$263,731</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_5 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums; border-top-width: 2px;" valign="middle" align="right">1,612</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Two Story</th>
+<td headers="Paducah, KY and Cairo, IL stub_1_6 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">53,162</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_6 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$412,955</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_6 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,023</td></tr>
+    <tr><th id="stub_1_7" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Three Story</th>
+<td headers="Paducah, KY and Cairo, IL stub_1_7 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">6,577</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_7 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$467,329</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_7 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">3,618</td></tr>
+    <tr style="border-bottom: 2px solid #ffffff00;"><th id="stub_1_8" scope="row" class="gt_row gt_left gt_stub" style="padding-top: 3px; padding-bottom: 3px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; color: #333333; background-color: #FFFFFF; font-size: 80%; font-weight: bolder; text-transform: uppercase; border-right-style: solid; border-right-width: 0px; border-right-color: #FFFFFF; padding-left: 5px; padding-right: 5px; text-align: left;" valign="middle" bgcolor="#FFFFFF" align="left">Mobile Home</th>
+<td headers="Paducah, KY and Cairo, IL stub_1_8 count" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">32,062</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_8 avg_val" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">$136,476</td>
+<td headers="Paducah, KY and Cairo, IL stub_1_8 avg_area" class="gt_row gt_right" style="padding-top: 3px; padding-bottom: 3px; padding-left: 5px; padding-right: 5px; margin: 10px; border-top-style: solid; border-top-width: 1px; border-top-color: #D3D3D3; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; vertical-align: middle; overflow-x: hidden; text-align: right; font-variant-numeric: tabular-nums;" valign="middle" align="right">1,553</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<p><strong>Autoroute/FloodSpreader</strong> used to generate 100-year flood depth grid for each location using minimum, maximum, and mean stream flow estimates.
+<img src="poster_figures/floods.png" width="90%" style="display: block; margin: auto;" />
+<strong>National Structures Inventory</strong> used to determine location, elevation, and structure type of residential buildings.</p>
+<p>We used the depth grids to determine flood depth at each structure in the study area, and applied the appropriate depth-emissions curve to determine the GHG emissions associated with the damage.</p>
+</div>
+</div>
+<div id="results" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Results</h1>
+<div id="tbl3" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#tbl3 .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 90%;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tbl3 .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl3 .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tbl3 .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tbl3 .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tbl3 .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl3 .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl3 .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tbl3 .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tbl3 .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tbl3 .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tbl3 .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tbl3 .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tbl3 .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#tbl3 .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tbl3 .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tbl3 .gt_row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tbl3 .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl3 .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tbl3 .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tbl3 .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl3 .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tbl3 .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tbl3 .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl3 .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl3 .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tbl3 .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tbl3 .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl3 .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl3 .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl3 .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl3 .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl3 .gt_left {
+  text-align: left;
+}
+
+#tbl3 .gt_center {
+  text-align: center;
+}
+
+#tbl3 .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tbl3 .gt_font_normal {
+  font-weight: normal;
+}
+
+#tbl3 .gt_font_bold {
+  font-weight: bold;
+}
+
+#tbl3 .gt_font_italic {
+  font-style: italic;
+}
+
+#tbl3 .gt_super {
+  font-size: 65%;
+}
+
+#tbl3 .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#tbl3 .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tbl3 .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tbl3 .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tbl3 .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tbl3 .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tbl3 .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+
+#tbl3 .gt_title {
+  color: #003591;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="18" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Damage-induced GHG emissions by flood depth (kg CO<sub>2eq</sub> x 10<sup>3</sup>)</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id=""></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="17" scope="colgroup" id="Flood depth relative to first floor elevation (ft)">
+        <span class="gt_column_spanner">Flood depth relative to first floor elevation (ft)</span>
+      </th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="-1">-1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="0">0</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="1">1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="2">2</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="3">3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="4">4</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="5">5</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="6">6</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="7">7</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="8">8</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="9">9</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="10">10</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="11">11</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="12">12</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="13">13</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="14">14</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="15">15</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="18" class="gt_group_heading" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Mobile Home">Mobile Home</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_left gt_stub">Structure</th>
+<td headers="Mobile Home stub_1_1 -1" class="gt_row gt_right">1.73</td>
+<td headers="Mobile Home stub_1_1 0" class="gt_row gt_right">5.17</td>
+<td headers="Mobile Home stub_1_1 1" class="gt_row gt_right">8.31</td>
+<td headers="Mobile Home stub_1_1 2" class="gt_row gt_right">8.86</td>
+<td headers="Mobile Home stub_1_1 3" class="gt_row gt_right">9.02</td>
+<td headers="Mobile Home stub_1_1 4" class="gt_row gt_right">9.47</td>
+<td headers="Mobile Home stub_1_1 5" class="gt_row gt_right">9.80</td>
+<td headers="Mobile Home stub_1_1 6" class="gt_row gt_right">9.82</td>
+<td headers="Mobile Home stub_1_1 7" class="gt_row gt_right">9.93</td>
+<td headers="Mobile Home stub_1_1 8" class="gt_row gt_right">12.23</td>
+<td headers="Mobile Home stub_1_1 9" class="gt_row gt_right">12.61</td>
+<td headers="Mobile Home stub_1_1 10" class="gt_row gt_right">12.76</td>
+<td headers="Mobile Home stub_1_1 11" class="gt_row gt_right">12.76</td>
+<td headers="Mobile Home stub_1_1 12" class="gt_row gt_right">12.76</td>
+<td headers="Mobile Home stub_1_1 13" class="gt_row gt_right">12.76</td>
+<td headers="Mobile Home stub_1_1 14" class="gt_row gt_right">12.76</td>
+<td headers="Mobile Home stub_1_1 15" class="gt_row gt_right">12.76</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub">Contents</th>
+<td headers="Mobile Home stub_1_2 -1" class="gt_row gt_right">0.00</td>
+<td headers="Mobile Home stub_1_2 0" class="gt_row gt_right">0.01</td>
+<td headers="Mobile Home stub_1_2 1" class="gt_row gt_right">4.00</td>
+<td headers="Mobile Home stub_1_2 2" class="gt_row gt_right">7.41</td>
+<td headers="Mobile Home stub_1_2 3" class="gt_row gt_right">8.55</td>
+<td headers="Mobile Home stub_1_2 4" class="gt_row gt_right">9.34</td>
+<td headers="Mobile Home stub_1_2 5" class="gt_row gt_right">9.67</td>
+<td headers="Mobile Home stub_1_2 6" class="gt_row gt_right">9.83</td>
+<td headers="Mobile Home stub_1_2 7" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 8" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 9" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 10" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 11" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 12" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 13" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 14" class="gt_row gt_right">9.89</td>
+<td headers="Mobile Home stub_1_2 15" class="gt_row gt_right">9.89</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub">Total</th>
+<td headers="Mobile Home stub_1_3 -1" class="gt_row gt_right">1.73</td>
+<td headers="Mobile Home stub_1_3 0" class="gt_row gt_right">5.18</td>
+<td headers="Mobile Home stub_1_3 1" class="gt_row gt_right">12.31</td>
+<td headers="Mobile Home stub_1_3 2" class="gt_row gt_right">16.27</td>
+<td headers="Mobile Home stub_1_3 3" class="gt_row gt_right">17.58</td>
+<td headers="Mobile Home stub_1_3 4" class="gt_row gt_right">18.81</td>
+<td headers="Mobile Home stub_1_3 5" class="gt_row gt_right">19.47</td>
+<td headers="Mobile Home stub_1_3 6" class="gt_row gt_right">19.65</td>
+<td headers="Mobile Home stub_1_3 7" class="gt_row gt_right">19.82</td>
+<td headers="Mobile Home stub_1_3 8" class="gt_row gt_right">22.12</td>
+<td headers="Mobile Home stub_1_3 9" class="gt_row gt_right">22.50</td>
+<td headers="Mobile Home stub_1_3 10" class="gt_row gt_right">22.65</td>
+<td headers="Mobile Home stub_1_3 11" class="gt_row gt_right">22.65</td>
+<td headers="Mobile Home stub_1_3 12" class="gt_row gt_right">22.65</td>
+<td headers="Mobile Home stub_1_3 13" class="gt_row gt_right">22.65</td>
+<td headers="Mobile Home stub_1_3 14" class="gt_row gt_right">22.65</td>
+<td headers="Mobile Home stub_1_3 15" class="gt_row gt_right">22.65</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="18" class="gt_group_heading" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="One-Story on Pier">One-Story on Pier</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_4" scope="row" class="gt_row gt_left gt_stub">Structure</th>
+<td headers="One-Story on Pier stub_1_4 -1" class="gt_row gt_right">1.18</td>
+<td headers="One-Story on Pier stub_1_4 0" class="gt_row gt_right">8.32</td>
+<td headers="One-Story on Pier stub_1_4 1" class="gt_row gt_right">28.82</td>
+<td headers="One-Story on Pier stub_1_4 2" class="gt_row gt_right">31.14</td>
+<td headers="One-Story on Pier stub_1_4 3" class="gt_row gt_right">33.58</td>
+<td headers="One-Story on Pier stub_1_4 4" class="gt_row gt_right">42.59</td>
+<td headers="One-Story on Pier stub_1_4 5" class="gt_row gt_right">43.42</td>
+<td headers="One-Story on Pier stub_1_4 6" class="gt_row gt_right">43.92</td>
+<td headers="One-Story on Pier stub_1_4 7" class="gt_row gt_right">44.03</td>
+<td headers="One-Story on Pier stub_1_4 8" class="gt_row gt_right">47.06</td>
+<td headers="One-Story on Pier stub_1_4 9" class="gt_row gt_right">48.33</td>
+<td headers="One-Story on Pier stub_1_4 10" class="gt_row gt_right">48.51</td>
+<td headers="One-Story on Pier stub_1_4 11" class="gt_row gt_right">48.64</td>
+<td headers="One-Story on Pier stub_1_4 12" class="gt_row gt_right">48.71</td>
+<td headers="One-Story on Pier stub_1_4 13" class="gt_row gt_right">48.80</td>
+<td headers="One-Story on Pier stub_1_4 14" class="gt_row gt_right">48.87</td>
+<td headers="One-Story on Pier stub_1_4 15" class="gt_row gt_right">48.97</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_left gt_stub">Contents</th>
+<td headers="One-Story on Pier stub_1_5 -1" class="gt_row gt_right">0.00</td>
+<td headers="One-Story on Pier stub_1_5 0" class="gt_row gt_right">2.08</td>
+<td headers="One-Story on Pier stub_1_5 1" class="gt_row gt_right">6.44</td>
+<td headers="One-Story on Pier stub_1_5 2" class="gt_row gt_right">9.84</td>
+<td headers="One-Story on Pier stub_1_5 3" class="gt_row gt_right">12.58</td>
+<td headers="One-Story on Pier stub_1_5 4" class="gt_row gt_right">15.39</td>
+<td headers="One-Story on Pier stub_1_5 5" class="gt_row gt_right">16.49</td>
+<td headers="One-Story on Pier stub_1_5 6" class="gt_row gt_right">17.72</td>
+<td headers="One-Story on Pier stub_1_5 7" class="gt_row gt_right">17.98</td>
+<td headers="One-Story on Pier stub_1_5 8" class="gt_row gt_right">18.12</td>
+<td headers="One-Story on Pier stub_1_5 9" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 10" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 11" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 12" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 13" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 14" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Pier stub_1_5 15" class="gt_row gt_right">18.17</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_left gt_stub">Total</th>
+<td headers="One-Story on Pier stub_1_6 -1" class="gt_row gt_right">1.18</td>
+<td headers="One-Story on Pier stub_1_6 0" class="gt_row gt_right">10.40</td>
+<td headers="One-Story on Pier stub_1_6 1" class="gt_row gt_right">35.26</td>
+<td headers="One-Story on Pier stub_1_6 2" class="gt_row gt_right">40.98</td>
+<td headers="One-Story on Pier stub_1_6 3" class="gt_row gt_right">46.15</td>
+<td headers="One-Story on Pier stub_1_6 4" class="gt_row gt_right">57.98</td>
+<td headers="One-Story on Pier stub_1_6 5" class="gt_row gt_right">59.91</td>
+<td headers="One-Story on Pier stub_1_6 6" class="gt_row gt_right">61.64</td>
+<td headers="One-Story on Pier stub_1_6 7" class="gt_row gt_right">62.01</td>
+<td headers="One-Story on Pier stub_1_6 8" class="gt_row gt_right">65.18</td>
+<td headers="One-Story on Pier stub_1_6 9" class="gt_row gt_right">66.49</td>
+<td headers="One-Story on Pier stub_1_6 10" class="gt_row gt_right">66.68</td>
+<td headers="One-Story on Pier stub_1_6 11" class="gt_row gt_right">66.81</td>
+<td headers="One-Story on Pier stub_1_6 12" class="gt_row gt_right">66.88</td>
+<td headers="One-Story on Pier stub_1_6 13" class="gt_row gt_right">66.97</td>
+<td headers="One-Story on Pier stub_1_6 14" class="gt_row gt_right">67.04</td>
+<td headers="One-Story on Pier stub_1_6 15" class="gt_row gt_right">67.14</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="18" class="gt_group_heading" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="One-Story on Slab">One-Story on Slab</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_7" scope="row" class="gt_row gt_left gt_stub">Structure</th>
+<td headers="One-Story on Slab stub_1_7 -1" class="gt_row gt_right">0.00</td>
+<td headers="One-Story on Slab stub_1_7 0" class="gt_row gt_right">5.51</td>
+<td headers="One-Story on Slab stub_1_7 1" class="gt_row gt_right">26.05</td>
+<td headers="One-Story on Slab stub_1_7 2" class="gt_row gt_right">30.22</td>
+<td headers="One-Story on Slab stub_1_7 3" class="gt_row gt_right">31.24</td>
+<td headers="One-Story on Slab stub_1_7 4" class="gt_row gt_right">42.58</td>
+<td headers="One-Story on Slab stub_1_7 5" class="gt_row gt_right">48.12</td>
+<td headers="One-Story on Slab stub_1_7 6" class="gt_row gt_right">50.27</td>
+<td headers="One-Story on Slab stub_1_7 7" class="gt_row gt_right">50.33</td>
+<td headers="One-Story on Slab stub_1_7 8" class="gt_row gt_right">53.46</td>
+<td headers="One-Story on Slab stub_1_7 9" class="gt_row gt_right">56.60</td>
+<td headers="One-Story on Slab stub_1_7 10" class="gt_row gt_right">56.94</td>
+<td headers="One-Story on Slab stub_1_7 11" class="gt_row gt_right">57.00</td>
+<td headers="One-Story on Slab stub_1_7 12" class="gt_row gt_right">57.00</td>
+<td headers="One-Story on Slab stub_1_7 13" class="gt_row gt_right">57.21</td>
+<td headers="One-Story on Slab stub_1_7 14" class="gt_row gt_right">57.21</td>
+<td headers="One-Story on Slab stub_1_7 15" class="gt_row gt_right">57.21</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_left gt_stub">Contents</th>
+<td headers="One-Story on Slab stub_1_8 -1" class="gt_row gt_right">0.00</td>
+<td headers="One-Story on Slab stub_1_8 0" class="gt_row gt_right">2.08</td>
+<td headers="One-Story on Slab stub_1_8 1" class="gt_row gt_right">6.44</td>
+<td headers="One-Story on Slab stub_1_8 2" class="gt_row gt_right">9.84</td>
+<td headers="One-Story on Slab stub_1_8 3" class="gt_row gt_right">12.58</td>
+<td headers="One-Story on Slab stub_1_8 4" class="gt_row gt_right">15.39</td>
+<td headers="One-Story on Slab stub_1_8 5" class="gt_row gt_right">16.49</td>
+<td headers="One-Story on Slab stub_1_8 6" class="gt_row gt_right">17.72</td>
+<td headers="One-Story on Slab stub_1_8 7" class="gt_row gt_right">17.98</td>
+<td headers="One-Story on Slab stub_1_8 8" class="gt_row gt_right">18.12</td>
+<td headers="One-Story on Slab stub_1_8 9" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 10" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 11" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 12" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 13" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 14" class="gt_row gt_right">18.17</td>
+<td headers="One-Story on Slab stub_1_8 15" class="gt_row gt_right">18.17</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_left gt_stub">Total</th>
+<td headers="One-Story on Slab stub_1_9 -1" class="gt_row gt_right">0.00</td>
+<td headers="One-Story on Slab stub_1_9 0" class="gt_row gt_right">7.59</td>
+<td headers="One-Story on Slab stub_1_9 1" class="gt_row gt_right">32.49</td>
+<td headers="One-Story on Slab stub_1_9 2" class="gt_row gt_right">40.06</td>
+<td headers="One-Story on Slab stub_1_9 3" class="gt_row gt_right">43.82</td>
+<td headers="One-Story on Slab stub_1_9 4" class="gt_row gt_right">57.97</td>
+<td headers="One-Story on Slab stub_1_9 5" class="gt_row gt_right">64.61</td>
+<td headers="One-Story on Slab stub_1_9 6" class="gt_row gt_right">67.99</td>
+<td headers="One-Story on Slab stub_1_9 7" class="gt_row gt_right">68.31</td>
+<td headers="One-Story on Slab stub_1_9 8" class="gt_row gt_right">71.58</td>
+<td headers="One-Story on Slab stub_1_9 9" class="gt_row gt_right">74.77</td>
+<td headers="One-Story on Slab stub_1_9 10" class="gt_row gt_right">75.10</td>
+<td headers="One-Story on Slab stub_1_9 11" class="gt_row gt_right">75.16</td>
+<td headers="One-Story on Slab stub_1_9 12" class="gt_row gt_right">75.16</td>
+<td headers="One-Story on Slab stub_1_9 13" class="gt_row gt_right">75.38</td>
+<td headers="One-Story on Slab stub_1_9 14" class="gt_row gt_right">75.39</td>
+<td headers="One-Story on Slab stub_1_9 15" class="gt_row gt_right">75.39</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="18" class="gt_group_heading" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Two-Story on Pier">Two-Story on Pier</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_10" scope="row" class="gt_row gt_left gt_stub">Structure</th>
+<td headers="Two-Story on Pier stub_1_10 -1" class="gt_row gt_right">2.26</td>
+<td headers="Two-Story on Pier stub_1_10 0" class="gt_row gt_right">9.50</td>
+<td headers="Two-Story on Pier stub_1_10 1" class="gt_row gt_right">32.92</td>
+<td headers="Two-Story on Pier stub_1_10 2" class="gt_row gt_right">36.01</td>
+<td headers="Two-Story on Pier stub_1_10 3" class="gt_row gt_right">39.71</td>
+<td headers="Two-Story on Pier stub_1_10 4" class="gt_row gt_right">47.82</td>
+<td headers="Two-Story on Pier stub_1_10 5" class="gt_row gt_right">52.54</td>
+<td headers="Two-Story on Pier stub_1_10 6" class="gt_row gt_right">52.93</td>
+<td headers="Two-Story on Pier stub_1_10 7" class="gt_row gt_right">53.21</td>
+<td headers="Two-Story on Pier stub_1_10 8" class="gt_row gt_right">55.58</td>
+<td headers="Two-Story on Pier stub_1_10 9" class="gt_row gt_right">77.71</td>
+<td headers="Two-Story on Pier stub_1_10 10" class="gt_row gt_right">80.01</td>
+<td headers="Two-Story on Pier stub_1_10 11" class="gt_row gt_right">81.92</td>
+<td headers="Two-Story on Pier stub_1_10 12" class="gt_row gt_right">89.51</td>
+<td headers="Two-Story on Pier stub_1_10 13" class="gt_row gt_right">95.51</td>
+<td headers="Two-Story on Pier stub_1_10 14" class="gt_row gt_right">96.48</td>
+<td headers="Two-Story on Pier stub_1_10 15" class="gt_row gt_right">98.14</td></tr>
+    <tr><th id="stub_1_11" scope="row" class="gt_row gt_left gt_stub">Contents</th>
+<td headers="Two-Story on Pier stub_1_11 -1" class="gt_row gt_right">0.06</td>
+<td headers="Two-Story on Pier stub_1_11 0" class="gt_row gt_right">12.37</td>
+<td headers="Two-Story on Pier stub_1_11 1" class="gt_row gt_right">16.76</td>
+<td headers="Two-Story on Pier stub_1_11 2" class="gt_row gt_right">20.70</td>
+<td headers="Two-Story on Pier stub_1_11 3" class="gt_row gt_right">24.86</td>
+<td headers="Two-Story on Pier stub_1_11 4" class="gt_row gt_right">27.51</td>
+<td headers="Two-Story on Pier stub_1_11 5" class="gt_row gt_right">30.12</td>
+<td headers="Two-Story on Pier stub_1_11 6" class="gt_row gt_right">32.36</td>
+<td headers="Two-Story on Pier stub_1_11 7" class="gt_row gt_right">32.85</td>
+<td headers="Two-Story on Pier stub_1_11 8" class="gt_row gt_right">33.11</td>
+<td headers="Two-Story on Pier stub_1_11 9" class="gt_row gt_right">36.11</td>
+<td headers="Two-Story on Pier stub_1_11 10" class="gt_row gt_right">36.11</td>
+<td headers="Two-Story on Pier stub_1_11 11" class="gt_row gt_right">37.89</td>
+<td headers="Two-Story on Pier stub_1_11 12" class="gt_row gt_right">38.78</td>
+<td headers="Two-Story on Pier stub_1_11 13" class="gt_row gt_right">39.55</td>
+<td headers="Two-Story on Pier stub_1_11 14" class="gt_row gt_right">40.21</td>
+<td headers="Two-Story on Pier stub_1_11 15" class="gt_row gt_right">40.55</td></tr>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_left gt_stub">Total</th>
+<td headers="Two-Story on Pier stub_1_12 -1" class="gt_row gt_right">2.32</td>
+<td headers="Two-Story on Pier stub_1_12 0" class="gt_row gt_right">21.87</td>
+<td headers="Two-Story on Pier stub_1_12 1" class="gt_row gt_right">49.68</td>
+<td headers="Two-Story on Pier stub_1_12 2" class="gt_row gt_right">56.71</td>
+<td headers="Two-Story on Pier stub_1_12 3" class="gt_row gt_right">64.57</td>
+<td headers="Two-Story on Pier stub_1_12 4" class="gt_row gt_right">75.34</td>
+<td headers="Two-Story on Pier stub_1_12 5" class="gt_row gt_right">82.66</td>
+<td headers="Two-Story on Pier stub_1_12 6" class="gt_row gt_right">85.28</td>
+<td headers="Two-Story on Pier stub_1_12 7" class="gt_row gt_right">86.06</td>
+<td headers="Two-Story on Pier stub_1_12 8" class="gt_row gt_right">88.68</td>
+<td headers="Two-Story on Pier stub_1_12 9" class="gt_row gt_right">113.82</td>
+<td headers="Two-Story on Pier stub_1_12 10" class="gt_row gt_right">116.12</td>
+<td headers="Two-Story on Pier stub_1_12 11" class="gt_row gt_right">119.81</td>
+<td headers="Two-Story on Pier stub_1_12 12" class="gt_row gt_right">128.28</td>
+<td headers="Two-Story on Pier stub_1_12 13" class="gt_row gt_right">135.06</td>
+<td headers="Two-Story on Pier stub_1_12 14" class="gt_row gt_right">136.68</td>
+<td headers="Two-Story on Pier stub_1_12 15" class="gt_row gt_right">138.69</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="18" class="gt_group_heading" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black;" scope="colgroup" id="Two-Story on Slab">Two-Story on Slab</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_13" scope="row" class="gt_row gt_left gt_stub">Structure</th>
+<td headers="Two-Story on Slab stub_1_13 -1" class="gt_row gt_right">0.00</td>
+<td headers="Two-Story on Slab stub_1_13 0" class="gt_row gt_right">8.78</td>
+<td headers="Two-Story on Slab stub_1_13 1" class="gt_row gt_right">33.26</td>
+<td headers="Two-Story on Slab stub_1_13 2" class="gt_row gt_right">40.10</td>
+<td headers="Two-Story on Slab stub_1_13 3" class="gt_row gt_right">43.94</td>
+<td headers="Two-Story on Slab stub_1_13 4" class="gt_row gt_right">55.96</td>
+<td headers="Two-Story on Slab stub_1_13 5" class="gt_row gt_right">61.92</td>
+<td headers="Two-Story on Slab stub_1_13 6" class="gt_row gt_right">62.49</td>
+<td headers="Two-Story on Slab stub_1_13 7" class="gt_row gt_right">62.60</td>
+<td headers="Two-Story on Slab stub_1_13 8" class="gt_row gt_right">66.34</td>
+<td headers="Two-Story on Slab stub_1_13 9" class="gt_row gt_right">84.15</td>
+<td headers="Two-Story on Slab stub_1_13 10" class="gt_row gt_right">87.70</td>
+<td headers="Two-Story on Slab stub_1_13 11" class="gt_row gt_right">88.33</td>
+<td headers="Two-Story on Slab stub_1_13 12" class="gt_row gt_right">93.54</td>
+<td headers="Two-Story on Slab stub_1_13 13" class="gt_row gt_right">104.46</td>
+<td headers="Two-Story on Slab stub_1_13 14" class="gt_row gt_right">104.46</td>
+<td headers="Two-Story on Slab stub_1_13 15" class="gt_row gt_right">104.54</td></tr>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_left gt_stub">Contents</th>
+<td headers="Two-Story on Slab stub_1_14 -1" class="gt_row gt_right">0.06</td>
+<td headers="Two-Story on Slab stub_1_14 0" class="gt_row gt_right">12.37</td>
+<td headers="Two-Story on Slab stub_1_14 1" class="gt_row gt_right">16.76</td>
+<td headers="Two-Story on Slab stub_1_14 2" class="gt_row gt_right">20.70</td>
+<td headers="Two-Story on Slab stub_1_14 3" class="gt_row gt_right">24.86</td>
+<td headers="Two-Story on Slab stub_1_14 4" class="gt_row gt_right">27.51</td>
+<td headers="Two-Story on Slab stub_1_14 5" class="gt_row gt_right">30.12</td>
+<td headers="Two-Story on Slab stub_1_14 6" class="gt_row gt_right">32.36</td>
+<td headers="Two-Story on Slab stub_1_14 7" class="gt_row gt_right">32.85</td>
+<td headers="Two-Story on Slab stub_1_14 8" class="gt_row gt_right">33.11</td>
+<td headers="Two-Story on Slab stub_1_14 9" class="gt_row gt_right">36.11</td>
+<td headers="Two-Story on Slab stub_1_14 10" class="gt_row gt_right">36.11</td>
+<td headers="Two-Story on Slab stub_1_14 11" class="gt_row gt_right">37.89</td>
+<td headers="Two-Story on Slab stub_1_14 12" class="gt_row gt_right">38.78</td>
+<td headers="Two-Story on Slab stub_1_14 13" class="gt_row gt_right">39.55</td>
+<td headers="Two-Story on Slab stub_1_14 14" class="gt_row gt_right">40.21</td>
+<td headers="Two-Story on Slab stub_1_14 15" class="gt_row gt_right">40.55</td></tr>
+    <tr><th id="stub_1_15" scope="row" class="gt_row gt_left gt_stub">Total</th>
+<td headers="Two-Story on Slab stub_1_15 -1" class="gt_row gt_right">0.06</td>
+<td headers="Two-Story on Slab stub_1_15 0" class="gt_row gt_right">21.15</td>
+<td headers="Two-Story on Slab stub_1_15 1" class="gt_row gt_right">50.02</td>
+<td headers="Two-Story on Slab stub_1_15 2" class="gt_row gt_right">60.80</td>
+<td headers="Two-Story on Slab stub_1_15 3" class="gt_row gt_right">68.81</td>
+<td headers="Two-Story on Slab stub_1_15 4" class="gt_row gt_right">83.47</td>
+<td headers="Two-Story on Slab stub_1_15 5" class="gt_row gt_right">92.04</td>
+<td headers="Two-Story on Slab stub_1_15 6" class="gt_row gt_right">94.85</td>
+<td headers="Two-Story on Slab stub_1_15 7" class="gt_row gt_right">95.45</td>
+<td headers="Two-Story on Slab stub_1_15 8" class="gt_row gt_right">99.45</td>
+<td headers="Two-Story on Slab stub_1_15 9" class="gt_row gt_right">120.26</td>
+<td headers="Two-Story on Slab stub_1_15 10" class="gt_row gt_right">123.81</td>
+<td headers="Two-Story on Slab stub_1_15 11" class="gt_row gt_right">126.22</td>
+<td headers="Two-Story on Slab stub_1_15 12" class="gt_row gt_right">132.31</td>
+<td headers="Two-Story on Slab stub_1_15 13" class="gt_row gt_right">144.01</td>
+<td headers="Two-Story on Slab stub_1_15 14" class="gt_row gt_right">144.66</td>
+<td headers="Two-Story on Slab stub_1_15 15" class="gt_row gt_right">145.09</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-7-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<div id="tbl4" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#tbl4 .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 40px;
+  font-weight: 300;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: 90%;
+  border-top-style: none;
+  border-top-width: 3px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tbl4 .gt_heading {
+  background-color: #FFFFFF;
+  text-align: left;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl4 .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#tbl4 .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tbl4 .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tbl4 .gt_bottom_border {
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl4 .gt_col_headings {
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl4 .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tbl4 .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tbl4 .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tbl4 .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tbl4 .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #000000;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tbl4 .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#tbl4 .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  border-top-style: none;
+  border-top-width: 2px;
+  border-top-color: #000000;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+  vertical-align: middle;
+}
+
+#tbl4 .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tbl4 .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tbl4 .gt_row {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tbl4 .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 80%;
+  font-weight: bolder;
+  text-transform: uppercase;
+  border-right-style: solid;
+  border-right-width: 0px;
+  border-right-color: #FFFFFF;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl4 .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tbl4 .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tbl4 .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl4 .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tbl4 .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tbl4 .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl4 .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl4 .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tbl4 .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tbl4 .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tbl4 .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl4 .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl4 .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tbl4 .gt_sourcenote {
+  font-size: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tbl4 .gt_left {
+  text-align: left;
+}
+
+#tbl4 .gt_center {
+  text-align: center;
+}
+
+#tbl4 .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tbl4 .gt_font_normal {
+  font-weight: normal;
+}
+
+#tbl4 .gt_font_bold {
+  font-weight: bold;
+}
+
+#tbl4 .gt_font_italic {
+  font-style: italic;
+}
+
+#tbl4 .gt_super {
+  font-size: 65%;
+}
+
+#tbl4 .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#tbl4 .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tbl4 .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#tbl4 .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#tbl4 .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#tbl4 .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#tbl4 .gt_indent_5 {
+  text-indent: 25px;
+}
+
+tbody tr:last-child {
+  border-bottom: 2px solid #ffffff00;
+}
+
+#tbl4 .gt_title {
+  color: #003591;
+  font-size: 100%;
+}
+</style>
+<table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style>Lifecycle GHG Emissions From 100-Year Flood Damages (kg CO<sub>2eq</sub>)</td>
+    </tr>
+    
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="2" colspan="1" scope="col" id=""></th>
+      <th class="gt_center gt_columns_top_border gt_column_spanner_outer" rowspan="1" colspan="3" scope="colgroup" id="Streamflow estimate scenario">
+        <span class="gt_column_spanner">Streamflow estimate scenario</span>
+      </th>
+    </tr>
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="MIN">MIN</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="MEAN">MEAN</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="border-top-width: 0px; border-top-style: solid; border-top-color: black;" scope="col" id="MAX">MAX</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><th id="stub_1_1" scope="row" class="gt_row gt_center gt_stub">burlington-davenport</th>
+<td headers="stub_1_1 MIN" class="gt_row gt_right">1.85 × 10<sup style='font-size: 65%;'>8</sup></td>
+<td headers="stub_1_1 MEAN" class="gt_row gt_right">2.27 × 10<sup style='font-size: 65%;'>8</sup></td>
+<td headers="stub_1_1 MAX" class="gt_row gt_right">2.66 × 10<sup style='font-size: 65%;'>8</sup></td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub">paducah-cairo</th>
+<td headers="stub_1_2 MIN" class="gt_row gt_right">1.12 × 10<sup style='font-size: 65%;'>8</sup></td>
+<td headers="stub_1_2 MEAN" class="gt_row gt_right">1.71 × 10<sup style='font-size: 65%;'>8</sup></td>
+<td headers="stub_1_2 MAX" class="gt_row gt_right">3.01 × 10<sup style='font-size: 65%;'>8</sup></td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+<div id="discussion" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Discussion</h1>
+<p>The framework demonstrated here provides FRM planners a method to rapidly extend traditional flood risk assessments to include life-cycle GHG emissions. The USEEIO LCIA approach also allows planners to incorporate other economic impacts such as lost business revenue that can be formatted as a demand vector. The model currently appears to be greatly overestimating the GHG emissions that would be induced by the flood damages.</p>
+<p>The maximum estimated GHG emissions per building area produced by the model are about twice the average estimated embodied carbon for new construction homes<span class="citation"><sup>3</sup></span>. Next steps include refining model parameters to address possible causes of overestimation, expanding the framework to incorpore demand reductions due to business down time, and expanding the case study to include LCIA possible FRM project alternatives.</p>
+</div>
+<div id="references" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> References</h1>
+<div id="refs" class="small references csl-bib-body">
+<div id="ref-gulf_engineers_and_consultants_depth-damage_2006" class="csl-entry">
+1. Gulf Engineers and Consultants. Depth-<span>Damage</span> <span>Relationships</span> for <span>Structures</span>, <span>Contents</span>, and <span>Vehicles</span> and <span>Content</span>-to-<span>Structure</span> <span>Value</span> <span>Ratios</span> (<span>CSVR</span>) in <span>Support</span> of the <span>Donaldsonville</span> to the <span>Gulf</span>, <span>Louisiana</span> <span>Feasibility</span> <span>Studies</span>. Baton Rouge, Louisiana, USA: U.S. Army Corps of Engineers New Orleans District; 2006. <a href="https://www.mvn.usace.army.mil/Portals/56/docs/PD/Donaldsv-Gulf.pdf">https://www.mvn.usace.army.mil/Portals/56/docs/PD/Donaldsv-Gulf.pdf</a>
+</div>
+<div id="ref-ingwersen_useeio_2022" class="csl-entry">
+2. Ingwersen WW, Li M, Young B, Vendries J, Birney C. <span>USEEIO</span> v2.0, <span>The</span> <span>US</span> <span>Environmentally</span>-<span>Extended</span> <span>Input</span>-<span>Output</span> <span>Model</span> v2.0. Scientific Data. 2022 [accessed 2022 Dec 5];9(1):194. <a href="https://www.nature.com/articles/s41597-022-01293-7">https://www.nature.com/articles/s41597-022-01293-7</a>. doi:<a href="https://doi.org/10.1038/s41597-022-01293-7">10.1038/s41597-022-01293-7</a>
+</div>
+<div id="ref-magwood_hidden_2023" class="csl-entry">
+3. Magwood C. The <span>Hidden</span> <span>Climate</span> <span>Impact</span> of <span>Residential</span> <span>Construction</span>: <span>Zeroing</span> <span>In</span> on <span>Embodied</span> <span>Carbon</span> <span>Emissions</span> for <span>Low</span>-<span>Rise</span> <span>Residential</span> <span>Buildings</span> in the <span>United</span> <span>States</span>. RMI; 2023. <a href="https://rmi.org/insight/hidden-climate-impact-of-residential-construction/">https://rmi.org/insight/hidden-climate-impact-of-residential-construction/</a>
+</div>
+</div>
+<div class="small">
+<p><strong>Funding:</strong> This research was supported in part by an appointment to the Department of Defense (DOD) Research Participation Program administered by the Oak Ridge Institute for Science and Education (ORISE) through an interagency agreement between the U.S. Department of Energy (DOE) and the DOD. ORISE is managed by ORAU under DOE contract number DE-SC0014664. All opinions expressed in this paper are the authors’ and do not necessarily reflect the policies and views of DOD, DOE, or ORAU/ORISE.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
