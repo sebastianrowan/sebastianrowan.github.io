@@ -4,6 +4,7 @@ title: AEESP 2023 Poster
 description: Poster presented at the 2023 AEESP Research & Education Conference in Boston, MA
 img: assets/img/aeesp2023-poster.png
 importance: 1
+group_id: flood_ghg
 category: poster
 ---
 

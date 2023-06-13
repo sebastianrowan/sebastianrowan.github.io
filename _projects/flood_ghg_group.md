@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Project Group 1
-description: A set of projects with a common theme
-img: assets/img/12.jpg
+title: Estimating the Greenhouse Gas Emissions of Flood Damages
+description: 
+img: assets/img/wes-warren-ZNJFrCOCcKA-unsplash.jpg
 importance: 1
 category: work
-display_categories: [paper, poster, presentation, other] # can be modified to include any desired values
-group_id: template
+display_categories: [paper, poster, presentation, other]
+group_id: flood_ghg
 horizontal: false
 ---
 
