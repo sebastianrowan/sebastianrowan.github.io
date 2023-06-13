@@ -668,6 +668,16 @@ html.transition *:after {
       padding: 8px;
     }
   }
+  
+  h1.group-name {
+    font-size: 1rem;
+    color: var(--global-text-color-light);
+    border-bottom: 1px solid var(--global-divider-color);
+    padding-top: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
 }
 
 progress {

@@ -5,7 +5,8 @@ description: A set of projects with a common theme
 img: assets/img/12.jpg
 importance: 1
 category: work
-display_categories: [paper, poster, presentation, other] # can be modified to include any desired values
+display_categories: [paper, poster, presentation, other] 
+group_parent: true
 group_id: template
 horizontal: false
 ---

@@ -6,6 +6,7 @@ img: assets/img/wes-warren-ZNJFrCOCcKA-unsplash.jpg
 importance: 1
 category: work
 display_categories: [paper, poster, presentation, other]
+group_parent: true
 group_id: flood_ghg
 horizontal: false
 ---

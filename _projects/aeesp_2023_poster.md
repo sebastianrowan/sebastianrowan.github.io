@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: sub-page
 title: AEESP 2023 Poster
 description: Poster presented at the 2023 AEESP Research & Education Conference in Boston, MA
 img: assets/img/aeesp2023-poster.png
@@ -14,6 +14,7 @@ category: poster
 <small><sup>2</sup>U.S. Army Corps of Engineers, Coastal and Hydraulics Laboratory; Vicksburg, MS, USA</small>
 
 
-<a href="/assets/poster/AEESP_2023/AEESP_2023_Poster.html"><img src="/assets/img/aeesp2023-poster.png" width="100%"></a>
+<a href="/assets/poster/AEESP_2023/AEESP_2023_Poster.html">Click here for full size</a>
+<embed src="/assets/img/aeesp2023-poster.pdf" width="700px" height="525px">
 
 
