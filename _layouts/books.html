@@ -22,7 +22,7 @@ layout: default
 
 {% if books.size > 0 %}
 
-  {% for book in books reversed %}
+  {% for book in books %}
       {% assign currentdate = book.date | date: "%Y" %}
       {% if currentdate != date %}
       {% unless forloop.first %}</ul>{% endunless %}
@@ -161,6 +161,4 @@ layout: default
 a:hover {
   color: #23212D;
 }
-
-  }
 </style>
