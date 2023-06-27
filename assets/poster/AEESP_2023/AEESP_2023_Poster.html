@@ -35,7 +35,7 @@ padding: 0;
 }
 body {
 margin: 0;
-font-size: 45px;
+font-size: 42px;
 width: 48in;
 height: 36in;
 padding: 0;
@@ -131,7 +131,7 @@ column-gap: 1em;
 padding-left: 0.5em;
 padding-right: 0.5em;
 height: 100%;
-color: #000000;
+color: #000000
 background-color: #ffffff;
 }
 .poster_title h1 {
@@ -175,7 +175,7 @@ margin-bottom: 0;
 .poster_body h1 {
 text-align: center;
 color: #FFFFFF;
-font-size: 65pt;
+font-size: 70pt;
 border: 0cm solid #003591;
 background-color: #001d52;
 border-radius: 4mm 0mm;
@@ -185,7 +185,7 @@ font-weight: normal;
 }
 .poster_body h2 {
 color: #003591;
-font-size: 40pt;
+font-size: 42pt;
 padding-left: 4mm;
 font-weight: normal;
 }
@@ -318,6 +318,11 @@ font-size: 20pt;
 <div class='poster_body_wrap'>
 <div class='poster_body'>
 <style type="text/css">
+strong {
+  color: #003591;
+  font-size: 45px;
+}
+
 .small {
     font-size: 24px;
     margin-right: 4mm;
@@ -330,6 +335,10 @@ font-size: 20pt;
   margin: 0px
 }
 
+.small strong {
+  font-size: 26px;
+}
+
 .header-section-number::after {
     content: "."
 }
@@ -340,45 +349,63 @@ font-size: 20pt;
   margin-bottom: 20px
 }
 
-strong {
-  color: #003591
-}
-
-#case-study-div {
+.container-div {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: flex-start
 }
 
-#cs-img-div {
+.left-div {
   width: 50%;
   padding-top: 10px
 }
 
-#cs-img-div p {
+.section .level2 {
+  padding: 0em;
+}
+
+#c1 {
+  margin-left: 4mm;
+  justify-content: space-between;
+}
+
+.left-div p {
   margin: 0px
 }
 
-#cs-tbl-div {
+.right-div {
   width: 50%;
 }
+
+#cap {
+  font-size: 12px;
+  float: right;
+}
 </style>
-<div id="overview" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Overview</h1>
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<div id="c1" class="container-div">
+<div class="left-div">
 <p><strong>Problem</strong>: The effects of floods and storms on greenhouse gas (GHG) emissions are not well-understood, and planners lack tools to incorporate them into decision-making for flood risk management (FRM) projects. A method to estimate the GHG emissions associated with flood events is needed to develop more sustainable FRM strategies.</p>
-<p><strong>Objective</strong>: Develop and demonstrate a framework to estimate the life-cycle GHG emissions that result from flood damages to single-family residential structures.</p>
+</div>
+<div class="right-div">
+<p><img src="poster_figures/wes-warren-ZNJFrCOCcKA-unsplash.jpg" width="95%" style="display: block; margin: auto 0 auto auto;" />
+<span id="cap" class="small">Photo by <a href="https://unsplash.com/@wcwarren?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Wes Warren</a> on <a href="https://unsplash.com/photos/ZNJFrCOCcKA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span></p>
+</div>
+</div>
+<p><strong>Objective</strong>: Develop and demonstrate a framework to estimate the life-cycle GHG emissions that result from repairing flood damages to single-family residential structures.</p>
 <p><strong>Methods</strong>: Use component-level depth-damage estimates to generate economic demand vectors for five residential structure types across a range of flood depths. Input demand vectors into U.S. EPA’s USEEIO LCIA model to produce structure-level depth-emissions curves for each structure type. Apply framework to Mississippi River Valley case study.</p>
 <p><strong>Results</strong>: Depth-emissions curves were produced for five residential structure types. Case study results show that damages from the 100-year flood could produce 1.85 - 2.66 x 10<sup>8</sup> kg CO<sub>2eq</sub> in the Burlington-Davenport region and 1.11 - 3.01 x 10<sup>8</sup> kg CO<sub>2eq</sub> in the Paducah-Cairo region.</p>
 </div>
-<div id="data-and-methods" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Data and Methods</h1>
-<div id="depth-emissions-curves" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Depth-Emissions Curves</h2>
-<p><strong>Depth-damage estimates</strong> for contents and structural components for 5 residential structure types from USACE report produced based on data from 39 homeowner surveys and panel of 9 industry experts<span class="citation"><sup>1</sup></span>.</p>
+<div id="data-and-methods" class="section level1">
+<h1>Data and Methods</h1>
+<div id="depth-emissions-curves" class="section level2">
+<h2>Depth-Emissions Curves</h2>
+<p><strong>Depth-damage estimates</strong> for contents and structural components for 5 residential structure types gathered from USACE report produced based on data from 39 homeowner surveys and panel of 9 industry experts<span class="citation"><sup>1</sup></span>. We mapped items to specific industry with NAICS code and aggregated damage cost values by code to produce an economic demand vector for each flood depth.</p>
 <div id="tbl1" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
   
-  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 24px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 90%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="90%" bgcolor="#FFFFFF">
+  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 100%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="100%" bgcolor="#FFFFFF">
   <thead class="gt_header">
     <tr>
       <td colspan="11" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: left; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal; color: #003591;" bgcolor="#FFFFFF" align="left">Sample Expert Opinion Depth-Damage Estimates for One-Story on Pier Structure</td>
@@ -505,19 +532,18 @@ strong {
   
 </table>
 </div>
-<p>We mapped items to specific industry with NAICS code and aggregated damage cost values by code to produce an economic demand vector for each flood depth.</p>
-<p><strong>USEEIO Model v2.0</strong> developed by U.S. EPA<span class="citation"><sup>2</sup></span> used to estimate the GHG emissions produced by the economic activity specified by a demand vector. We input demand vectors for flood depths from -1 to 15ft relative to first floor elevation (FFE) into the USEEIO model to produce depth-emissions curves for each structure type.</p>
+<p><strong>USEEIO Model v2.0</strong> developed by U.S. EPA was used to estimate the GHG emissions produced by the economic activity specified by a demand vector<span class="citation"><sup>2</sup></span>. We input demand vectors for flood depths from -1 to 15ft relative to first floor elevation (FFE) into the USEEIO model to produce depth-emissions curves for each structure type.</p>
 </div>
-<div id="case-study" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Case Study</h2>
-<div id="case-study-div">
-<div id="cs-img-div">
-<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-3-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="case-study" class="section level2">
+<h2>Case Study</h2>
+<div class="container-div">
+<div class="left-div">
+<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-4-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
-<div id="cs-table-div">
+<div class="right-div">
 <div id="tbl2" style="padding-left: 0px; padding-right: 0px; padding-top: 10px; padding-bottom: 10px; overflow-x: auto; overflow-y: auto; width: auto; height: auto;">
   
-  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 24px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 100%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="100%" bgcolor="#FFFFFF">
+  <table class="gt_table" style="font-family: Chivo, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif; display: table; border-collapse: collapse; margin-left: auto; margin-right: auto; color: #333333; font-size: 26px; font-weight: 300; font-style: normal; background-color: #FFFFFF; width: 100%; border-top-style: none; border-top-width: 3px; border-top-color: #A8A8A8; border-right-style: none; border-right-width: 2px; border-right-color: #D3D3D3; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #A8A8A8; border-left-style: none; border-left-width: 2px; border-left-color: #D3D3D3;" width="100%" bgcolor="#FFFFFF">
   <thead class="gt_header">
     <tr>
       <td colspan="4" class="gt_heading gt_title gt_font_normal gt_bottom_border" style="background-color: #FFFFFF; text-align: left; border-left-style: none; border-left-width: 1px; border-left-color: #D3D3D3; border-right-style: none; border-right-width: 1px; border-right-color: #D3D3D3; font-size: 125%; padding-top: 4px; padding-bottom: 4px; padding-left: 5px; padding-right: 5px; border-bottom-style: none; border-bottom-width: 2px; border-bottom-color: #D3D3D3; font-weight: normal; color: #003591;" bgcolor="#FFFFFF" align="left">Study Area Residential Structures Stats</td>
@@ -578,14 +604,14 @@ strong {
 </div>
 </div>
 </div>
-<p><strong>Autoroute/FloodSpreader</strong> used to generate 100-year flood depth grid for each location using minimum, maximum, and mean stream flow estimates.
+<p><strong>Autoroute/FloodSpreader</strong> was used to generate 100-year flood depth grid for each location using minimum, maximum, and mean stream flow estimates<span class="citation"><sup>3</sup></span>.
 <img src="poster_figures/floods.png" width="90%" style="display: block; margin: auto;" />
 <strong>National Structures Inventory</strong> used to determine location, elevation, and structure type of residential buildings.</p>
 <p>We used the depth grids to determine flood depth at each structure in the study area, and applied the appropriate depth-emissions curve to determine the GHG emissions associated with the damage.</p>
 </div>
 </div>
-<div id="results" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Results</h1>
+<div id="results" class="section level1">
+<h1>Results</h1>
 <div id="tbl3" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
@@ -598,11 +624,11 @@ html {
   margin-left: auto;
   margin-right: auto;
   color: #333333;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 300;
   font-style: normal;
   background-color: #FFFFFF;
-  width: 90%;
+  width: 100%;
   border-top-style: none;
   border-top-width: 3px;
   border-top-color: #A8A8A8;
@@ -1331,7 +1357,7 @@ tbody tr:last-child {
   
 </table>
 </div>
-<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-7-1.png" width="90%" style="display: block; margin: auto;" /></p>
+<p><img src="AEESP_2023_Poster_files/figure-html/unnamed-chunk-8-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <div id="tbl4" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
@@ -1348,7 +1374,7 @@ html {
   font-weight: 300;
   font-style: normal;
   background-color: #FFFFFF;
-  width: 90%;
+  width: 100%;
   border-top-style: none;
   border-top-width: 3px;
   border-top-color: #A8A8A8;
@@ -1788,13 +1814,13 @@ tbody tr:last-child {
 </table>
 </div>
 </div>
-<div id="discussion" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Discussion</h1>
+<div id="discussion" class="section level1">
+<h1>Discussion</h1>
 <p>The framework demonstrated here provides FRM planners a method to rapidly extend traditional flood risk assessments to include life-cycle GHG emissions. The USEEIO LCIA approach also allows planners to incorporate other economic impacts such as lost business revenue that can be formatted as a demand vector. The model currently appears to be greatly overestimating the GHG emissions that would be induced by the flood damages.</p>
-<p>The maximum estimated GHG emissions per building area produced by the model are about twice the average estimated embodied carbon for new construction homes<span class="citation"><sup>3</sup></span>. Next steps include refining model parameters to address possible causes of overestimation, expanding the framework to incorpore demand reductions due to business down time, and expanding the case study to include LCIA possible FRM project alternatives.</p>
+<p>The maximum estimated GHG emissions per building area produced by the model are about twice the average estimated embodied carbon for new construction homes<span class="citation"><sup>4</sup></span>. Next steps include refining model parameters to address possible causes of overestimation, expanding the framework to incorpore demand reductions due to business down time, and expanding the case study to include LCIA possible FRM project alternatives.</p>
 </div>
-<div id="references" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> References</h1>
+<div id="references" class="section level1">
+<h1>References</h1>
 <div id="refs" class="small references csl-bib-body">
 <div id="ref-gulf_engineers_and_consultants_depth-damage_2006" class="csl-entry">
 1. Gulf Engineers and Consultants. Depth-<span>Damage</span> <span>Relationships</span> for <span>Structures</span>, <span>Contents</span>, and <span>Vehicles</span> and <span>Content</span>-to-<span>Structure</span> <span>Value</span> <span>Ratios</span> (<span>CSVR</span>) in <span>Support</span> of the <span>Donaldsonville</span> to the <span>Gulf</span>, <span>Louisiana</span> <span>Feasibility</span> <span>Studies</span>. Baton Rouge, Louisiana, USA: U.S. Army Corps of Engineers New Orleans District; 2006. <a href="https://www.mvn.usace.army.mil/Portals/56/docs/PD/Donaldsv-Gulf.pdf">https://www.mvn.usace.army.mil/Portals/56/docs/PD/Donaldsv-Gulf.pdf</a>
@@ -1802,8 +1828,11 @@ tbody tr:last-child {
 <div id="ref-ingwersen_useeio_2022" class="csl-entry">
 2. Ingwersen WW, Li M, Young B, Vendries J, Birney C. <span>USEEIO</span> v2.0, <span>The</span> <span>US</span> <span>Environmentally</span>-<span>Extended</span> <span>Input</span>-<span>Output</span> <span>Model</span> v2.0. Scientific Data. 2022 [accessed 2022 Dec 5];9(1):194. <a href="https://www.nature.com/articles/s41597-022-01293-7">https://www.nature.com/articles/s41597-022-01293-7</a>. doi:<a href="https://doi.org/10.1038/s41597-022-01293-7">10.1038/s41597-022-01293-7</a>
 </div>
+<div id="ref-follum2012autoroute" class="csl-entry">
+3. Follum M. AutoRoute rapid flood inundation model, coastal and hydraulics engineering technical note ERDC. CHL CHETN-IV-88, US Army Engineer Research; Development Center, Coastal …; 2012.
+</div>
 <div id="ref-magwood_hidden_2023" class="csl-entry">
-3. Magwood C. The <span>Hidden</span> <span>Climate</span> <span>Impact</span> of <span>Residential</span> <span>Construction</span>: <span>Zeroing</span> <span>In</span> on <span>Embodied</span> <span>Carbon</span> <span>Emissions</span> for <span>Low</span>-<span>Rise</span> <span>Residential</span> <span>Buildings</span> in the <span>United</span> <span>States</span>. RMI; 2023. <a href="https://rmi.org/insight/hidden-climate-impact-of-residential-construction/">https://rmi.org/insight/hidden-climate-impact-of-residential-construction/</a>
+4. Magwood C. The <span>Hidden</span> <span>Climate</span> <span>Impact</span> of <span>Residential</span> <span>Construction</span>: <span>Zeroing</span> <span>In</span> on <span>Embodied</span> <span>Carbon</span> <span>Emissions</span> for <span>Low</span>-<span>Rise</span> <span>Residential</span> <span>Buildings</span> in the <span>United</span> <span>States</span>. RMI; 2023. <a href="https://rmi.org/insight/hidden-climate-impact-of-residential-construction/">https://rmi.org/insight/hidden-climate-impact-of-residential-construction/</a>
 </div>
 </div>
 <div class="small">
