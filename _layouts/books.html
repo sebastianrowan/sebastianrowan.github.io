@@ -15,18 +15,19 @@ layout: default
 
 </div>
 
+#TODO: group books by year and add correct heading like in publications
 
-{% assign books=site.books %}
+{% assign books=site.books | sort: "date-started" %}
 
 <h2>{{page.list_title | default: "Books" }}</h2>
 
 {% if books.size > 0 %}
 
-  {% for book in books %}
+  {% for book in books reversed %}
       {% assign currentdate = book.date | date: "%Y" %}
       {% if currentdate != date %}
       {% unless forloop.first %}</ul>{% endunless %}
-       <h1 id="y{{book.date | date: "%Y"}}">{{ currentdate }}</h1>
+       <h1 id='y{{book.date | date: "%Y"}}'>{{ currentdate }}</h1>
 
      <ul>
      {% assign date = currentdate %}
@@ -38,7 +39,7 @@ layout: default
 
         {% if book.cover %}
 
-        <img alt="{{ book.title }} cover" src="{{ site.baseurl }}/images/covers/{{ book.cover }}" style="height:200px" />
+        <img alt="{{ book.title }} cover" src="{{ book.cover }}" style="height:200px" />
 
         {% elsif book.olid %}
 
