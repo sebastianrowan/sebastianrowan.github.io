@@ -5,8 +5,6 @@
       value: Sebastian Rowan
     - name: Contact
       value: sebastian.rowan@unh.edu
-    - name: Languages
-      value: English (native), Spanish (intermediate), German (beginner)
 
 - title: Education
   type: time_table
@@ -15,8 +13,8 @@
       institution: University of New Hampshire, Durham, NH
       year: 2024 (expected)
       description:
-        - Dissertation Title - Assessment of the carbon footprint of flood damages and flood risk management projects (Working Title).
-        - Dissertation Advisor - Dr. Weiwei Mo
+        - "Dissertation Title: Assessment of the carbon footprint of flood damages and flood risk management projects."
+        - "Dissertation Advisor: Dr. Weiwei Mo"
     - title: B.S. Environmental Engineering
       institution: University of New Hampshire, Durham, NH
       year: 2016
@@ -37,7 +35,7 @@
         - CEE 502 - Project Engineering
         - CEE 705 - Introduction to Sustainable Engineering
 
-    - title: Civil Engineer II
+    - title: Civil Engineer I-II
       institution: New Hampshire Department of Transportation
       year: 2016-2018
 
