@@ -16,55 +16,40 @@ def main():
     books = pd.read_csv(url)
     books['Date Started'] = pd.to_datetime(books['Date Started'])
     books['Date Finished'] = pd.to_datetime(books['Date Finished'])
-    for index, row in books.iterrows():
-        create_md(row)
+    books['year_group'] = books['Date Started'].dt.year
+    
+    yml = "# encoding: utf-8\n"
 
+    years = sorted(books['year_group'].unique(), reverse = True)
 
-def create_md(row):
-    if row['Gave Up']:
-        status = "abandoned"
-        year = row['Date Finished'].year
-    elif pd.isnull(row['Date Finished']):
-        status = "reading"
-        year = row['Date Started'].year
-    else:
-        status = "finished"
-        year = row['Date Finished'].year
-    desc = row['API Description']
-    if type(desc) == str:
-        desc = desc.encode('ascii', errors='ignore').decode('ascii')
-    if pd.isnull(row['Stars']):
-        stars = 0
-    else:
-        stars = row['Stars']
-    if pd.isnull(row['cover']):
-        cover = ""
-    else:
-        cover = f"'row['cover']'"
-    md = (
-        "---\n"
-        "published: true\n"
-        "layout: review\n"
-        f"date-started: '{row['Date Started']}'\n"
-        f"date-finished: '{row['Date Finished']}'\n"
-        f"cover: {cover}\n"
-        "olid:\n"
-        f"isbn: {row['ISBN']}\n"
-        f"title: '{row['Title']}'\n"
-        f"year: {year}\n"
-        f"status: {status}\n"
-        f"stars: {stars}\n"
-        f"type: {row['Type']}\n"
-        f"language: {row['Language']}\n"
-        "---\n"
-        f"{desc}"
-    )
+    for year in years:
+        header = f"- title: {year}\n  type: list\n  contents:\n"
+        yml = yml + header
+        for index, row in books.sort_values(by=['Date Started'], ascending=False).iterrows():
+            if row['year_group'] == year:
+                entry = create_yml(row)
+                yml = yml + entry
 
-    filename = f"{row['Title'].replace(' ', '-').replace('?','').replace(':','')[0:40]}.md"
+    filename = "../_data/books.yml"
     print(filename)
 
-    with open(filename, 'w') as m:
-        m.write(md)
+    with open(filename, 'w', encoding="utf-8") as y:
+        y.write(yml)
+
+def create_yml(row):
+    if row['Gave Up']:
+        status = "Gave Up"
+        year = row['Date Finished'].year
+    elif pd.isnull(row['Date Finished']):
+        status = "In Progress"
+        year = row['Date Started'].year
+    else:
+        status = "Finished"
+        year = row['Date Finished'].year
+
+    yml = f'    - "<i>{row["Title"]}</i> - {row["Author"]} - {status}"\n'
+
+    return(yml)
 
     
 

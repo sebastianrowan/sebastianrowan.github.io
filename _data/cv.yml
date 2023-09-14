@@ -58,16 +58,14 @@
       year: Active
       description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models">USEEIO models</a>.
 
-#- title: Honors and Awards
-#  type: time_table
-#  contents:
-#    - year: 1921
-#      items: 
-#        - Nobel Prize in Physics 
-#       - Matteucci Medal
-#    - year: 2029
-#      items: 
-#        - Max Planck Medal
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2023
+      items: 
+        - ORISE Future of Science Award
+
 
 # - title: Academic Interests
 #   type: nested_list
