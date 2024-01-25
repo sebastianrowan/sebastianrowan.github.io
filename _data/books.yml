@@ -1,13 +1,26 @@
 # encoding: utf-8
+
+- title: 2024
+  type: list
+  contents:
+    - "<i>Chapters</i> - Tim Key - In Progress"
+    - "<i>Deadhouse Gates</i> - Steven Erikson - In Progress"
+    - "<i>Road to Nowhere: What Silicon valley Gets Wrong about the Future of Transportation</i> - Paris Marx - In Progress"
 - title: 2023
   type: list
   contents:
-    - "<i>Half a War</i> - Joe Abercrombie - In Progress"
-    - "<i>The Second Spy: The Books of Elsewhere Volume Three</i> - Jacqueline West - In Progress"
+    - "<i>Parable of the Sower</i> - Octavia Butler - Finished"
+    - "<i>The Daughter of Odren</i> - Ursula K. Le Guin - Finished"
+    - "<i>Palestine: A Socialist Introduction</i> - nan - In Progress"
+    - "<i>Still Life: The Books of Elsewhere Volume Five</i> - Jacqueline West - In Progress"
+    - "<i>The Ministry For the Future</i> - Kim Stanley Robinson - Gave Up"
+    - "<i>The Strangers: The Books of Elsewhere Volume Four</i> - Jacqueline West - Finished"
+    - "<i>Half a War</i> - Joe Abercrombie - Finished"
+    - "<i>The Second Spy: The Books of Elsewhere Volume Three</i> - Jacqueline West - Finished"
+    - "<i>Gardens of the Moon</i> - Steven Erikson - Finished"
     - "<i>Warren the 13th and the All Seeing Eye</i> - Tania Del Rio - Finished"
-    - "<i>Gardens of the Moon</i> - Steve Erikson - Finished"
     - "<i>A Deadly Education</i> - Naomi Novik - Gave Up"
-    - "<i>Gentrification is Inevitable and Other Lies</i> - Leslie Kern - In Progress"
+    - "<i>Gentrification is Inevitable and Other Lies</i> - Leslie Kern - Gave Up"
     - "<i>Daddy Issues: Love and Hate in the Time of Patriarchy</i> - Katherine Angel - Finished"
     - "<i>Spellbound: The Books of Elsewhere Volume Two</i> - Jacqueline West - Finished"
     - "<i>The Shadows: The Books of Elsewhere Volume One</i> - Jacqueline West - Finished"
@@ -71,8 +84,8 @@
   contents:
     - "<i>A Knight of the Seven Kingdoms</i> - George R. R. Martin - Finished"
     - "<i>Shopping our way to safety: how we changed from protecting the environment to protecting ourselves</i> - Andrew Szasz - Finished"
-    - "<i>Homegoing</i> - Yaa Gyasi - Finished"
     - "<i>American Catch: The Fight for Our Local Seafood</i> - Paul Greenburg - Finished"
+    - "<i>Homegoing</i> - Yaa Gyasi - Finished"
     - "<i>Exit West</i> - Moshin Hamid - Finished"
     - "<i>Harry Potter y la Orden del Fenix</i> - J.K. Rowling - Finished"
     - "<i>To Kill a Mockingbird</i> - Harper Lee - Finished"
@@ -95,7 +108,7 @@
     - "<i>Born a Crime</i> - Trevor Noah - Finished"
     - "<i>Harry Potter y la Prisionero de Azkaban</i> - J.K. Rowling - Finished"
     - "<i>A Feast for Crows</i> - George R. R. Martin  - Finished"
-    - "<i>A Storm of Swords (Last 10 chapters)</i> - George R. R. Martin - Finished"
+    - "<i>A Storm of Swords</i> - George R. R. Martin - Finished"
     - "<i>Harry Potter y la Camara Secreta</i> - J.K. Rowling - Finished"
 - title: 2018
   type: list
