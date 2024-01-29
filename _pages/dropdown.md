@@ -1,22 +1,16 @@
 ---
 layout: page
-title: more
+title: submenus
 nav: true
-nav_order: 6
+nav_order: 8
 dropdown: true
-children: 
-    - title: blog
-      permalink: /blog/
-    - title: divider
-    - title: bookshelf
-      permalink: /books/
-    - title: divider
-    - title: projects
-      permalink: /projects/
-    - title: divider
-    - title: repositories
-      permalink: /repositories/
-    - title: divider
-    - title: teaching
-      permalink: /teaching/
+children:
+  - title: publications
+    permalink: /publications/
+  - title: divider
+  - title: projects
+    permalink: /projects/
+  - title: divider
+  - title: blog
+    permalink: /blog/
 ---

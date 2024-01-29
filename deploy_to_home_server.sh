@@ -1,1 +1,0 @@
-bundle exec jekyll build --destination /h/jekyll/_site
