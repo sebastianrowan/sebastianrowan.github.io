@@ -7,7 +7,6 @@ importance: 1
 category: work
 ---
 
-
 <!-- badges: start -->
 
 [![lifecycle](https://raw.githubusercontent.com/sebastianrowan/svibuildr/86f4c909318408a4c26867a2e7477c5c518c199c/man/figures/lifecycle-experimental.svg)](https://github.com/sebastianrowan/svibuildr)
@@ -15,6 +14,7 @@ category: work
 [![pkgdown](https://github.com/sebastianrowan/svibuildr/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/sebastianrowan/svibuildr/actions/workflows/pkgdown.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/sebastianrowan/svibuildr/branch/master/graph/badge.svg)](https://app.codecov.io/gh/sebastianrowan/svibuildr?branch=master)
+
 <!-- badges: end -->
 
 `svibuildr` is an R package that allows users to download or construct
@@ -33,7 +33,7 @@ study area consisting of three states in which SVI scores are calculated
 by comparing values across counties in just the three states rather than
 across all 50 states:
 
-``` r
+```r
 library(svibuildr)
 
 tri_state_svi <- calculate_svi(
@@ -103,8 +103,7 @@ downloaded from the CDC.
 <div id="ref-cdc-atsdr_cdcatsdr_2022" class="csl-entry">
 
 <span class="csl-left-margin">\[1\] </span><span
-class="csl-right-inline">CDC-ATSDR, “CDC/ATSDR SVI 2020 documentation.”
-2022. Available:
+class="csl-right-inline">CDC-ATSDR, “CDC/ATSDR SVI 2020 documentation.” 2022. Available:
 <https://www.atsdr.cdc.gov/placeandhealth/svi/documentation/SVI_documentation_2020.html></span>
 
 </div>
@@ -112,9 +111,9 @@ class="csl-right-inline">CDC-ATSDR, “CDC/ATSDR SVI 2020 documentation.”
 <div id="ref-walker_tidycensus_2022" class="csl-entry">
 
 <span class="csl-left-margin">\[2\] </span><span
-class="csl-right-inline">K. Walker and M. Herman, *Tidycensus: Load US
+class="csl-right-inline">K. Walker and M. Herman, _Tidycensus: Load US
 census boundary and attribute data as ’tidyverse’ and ’sf’-ready data
-frames*. 2022. Available:
+frames_. 2022. Available:
 <https://CRAN.R-project.org/package=tidycensus></span>
 
 </div>

@@ -151,12 +151,7 @@
       "name": "Programming Languages",
       "level": "",
       "icon": "",
-      "keywords": [
-        "Python",
-        "R",
-        "MATLAB",
-        "SQL"
-      ]
+      "keywords": ["Python", "R", "MATLAB", "SQL"]
     }
   ],
   "languages": [
@@ -170,24 +165,12 @@
     {
       "name": "Research",
       "icon": "",
-      "keywords": [
-        "Flood Risk",
-        "Life-cycle Analysis",
-        "Community Resilience",
-        "Urban Planning",
-        "Transit/Transportation"
-      ]
+      "keywords": ["Flood Risk", "Life-cycle Analysis", "Community Resilience", "Urban Planning", "Transit/Transportation"]
     },
     {
       "name": "Hobbies",
       "icon": "",
-      "keywords": [
-        "Cooking",
-        "Baking",
-        "Snowboarding",
-        "Reading",
-        "Painting"
-      ]
+      "keywords": ["Cooking", "Baking", "Snowboarding", "Reading", "Painting"]
     }
   ]
 }

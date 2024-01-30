@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Estimating the Greenhouse Gas Emissions of Flood Damages
-description: 
+description:
 img: assets/img/wes-warren-ZNJFrCOCcKA-unsplash.jpg
 importance: 1
 category: work
@@ -38,11 +38,16 @@ horizontal: false
   {% endfor %}
 
 {%- else -%}
+
 <!-- Display projects without categories -->
-  {%- assign grouped_projects = site.projects | where: "group_id", page.group_id -%}
-  {%- assign sorted_projects = grouped_projects | sort: "importance" -%}
+
+{%- assign grouped_projects = site.projects | where: "group_id", page.group_id -%}
+{%- assign sorted_projects = grouped_projects | sort: "importance" -%}
+
   <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
+
+{% if page.horizontal -%}
+
   <div class="container">
     <div class="row row-cols-2">
     {%- for project in sorted_projects -%}
@@ -59,4 +64,3 @@ horizontal: false
   {%- endif -%}
 {%- endif -%}
 </div>
-
