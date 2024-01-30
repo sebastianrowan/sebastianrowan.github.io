@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Estimating the Greenhouse Gas Emissions of Flood Damages
-description: 
+description:
 img: assets/img/wes-warren-ZNJFrCOCcKA-unsplash.jpg
 importance: 1
 category: work
@@ -24,39 +24,43 @@ horizontal: false
   <div class="container">
     <div class="row row-cols-2">
     {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
+      {% include projects_horizontal.liquid %}
     {%- endfor %}
     </div>
   </div>
   {%- else -%}
   <div class="grid">
     {%- for project in sorted_projects -%}
-      {% include projects.html %}
+      {% include projects.liquid %}
     {%- endfor %}
   </div>
   {%- endif -%}
   {% endfor %}
 
 {%- else -%}
+
 <!-- Display projects without categories -->
-  {%- assign grouped_projects = site.projects | where: "group_id", page.group_id -%}
-  {%- assign sorted_projects = grouped_projects | sort: "importance" -%}
+
+{%- assign grouped_projects = site.projects | where: "group_id", page.group_id -%}
+{%- assign sorted_projects = grouped_projects | sort: "importance" -%}
+
   <!-- Generate cards for each project -->
-  {% if page.horizontal -%}
+
+{% if page.horizontal -%}
+
   <div class="container">
     <div class="row row-cols-2">
     {%- for project in sorted_projects -%}
-      {% include projects_horizontal.html %}
+      {% include projects_horizontal.liquid %}
     {%- endfor %}
     </div>
   </div>
   {%- else -%}
   <div class="grid">
     {%- for project in sorted_projects -%}
-      {% include projects.html %}
+      {% include projects.liquid %}
     {%- endfor %}
   </div>
   {%- endif -%}
 {%- endif -%}
 </div>
-
