@@ -1,97 +1,105 @@
 - title: General Information
   type: map
   contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+    - name: Name
+      value: Sebastian Rowan
+    - name: Contact
+      value: sebastian.rowan@unh.edu
+    - name: About
+      value: |
+        I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research, is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being rather than maximizing financial return on investment.
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Ph.D. Civil and Environmental Engineering
+      institution: University of New Hampshire, Durham, NH
+      year: 2024 (expected)
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - "Dissertation Title: Assessment of the carbon footprint of flood damages and flood risk management projects."
+        - "Dissertation Advisor: Dr. Weiwei Mo"
+    - title: B.S. Environmental Engineering
+      institution: University of New Hampshire, Durham, NH
+      year: 2016
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: ORISE Graduate Research Fellow
+      institution: U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory
+      year: 2020 - Present
       description:
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: Research and Teaching Assistant
+      institution: University of New Hampshire
+      year: 2018-2020
+      description:
+        - Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)
+        - CEE 502 - Project Engineering
+        - CEE 705 - Introduction to Sustainable Engineering
+
+    - title: Civil Engineer I-II
+      institution: New Hampshire Department of Transportation
+      year: 2016-2018
+
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://github.com/sebastianrowan/svibuildr">sviBuildr</a>
+      year: Active
+      description: An R package that allows users to download or construct the <a href="https://www.atsdr.cdc.gov/placeandhealth/svi/index.html">Social Vulnerability Index</a> as a tidyverse dataframe or as simple features dataframe for spatial analyses.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: <a href="https://github.com/sebastianrowan/get_nsi_data">NSI Data QGIS Plugin</a>
+      year: Active
+      description: A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+    - title: <a href="https://github.com/sebastianrowan/useeio_py">useeio_py</a>
+      year: Active
+      description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models">USEEIO models</a>.
 
-- title: Other Interests
+
+# - title: Honors and Awards
+#   type: time_table
+#   contents:
+#     - year: 2023
+#       items: 
+#         - 
+
+
+# - title: Academic Interests
+#   type: nested_list
+#   contents:
+#     - title: Flood Risk Assessment
+#       items: 
+#         #- Description 
+#     - title: Sustainability
+#       items:
+#         #- Description 1.
+#         #- Description 2.
+#     - title: Equity
+#       items:
+#         #- Description 1.
+#         #- Description 2.
+
+- title: Selected Publications
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+
+  - "<strong>Rowan, S.</strong>, Mo, W. (2024). <i>Estimating the Greenhouse Gas Emissions of Flood Damages.</i> Science of the Total Environment [Manuscript Submitted for Publication]."
+
+  - "Memarsadeghi, N., <strong>Rowan, S.</strong>, Sisco, A., Tavakoly, A. (2024). <i>Integrating Future Flood Modeling and Socio-Economic Analysis in the Face of Climate Change Impacts.</i> Science of the Total Environment [Manuscript Submitted for Publication]."
+
+  - "<strong>Rowan, S.</strong>, Yeates, E., Wells, E., Murray, B., & Pinigina, E. (2023). <i>Risk Factors for Mental Health Impacts From Floods: A Systematic Literature Review and Metasummary.</i> Natural Hazards [Manuscript Submitted for Publication]."
+
+  - "Galaitsi, S., Kurth, M., <strong>Rowan, S.</strong>, Yeates, E., & Kalaidjian, E. (2022). <i>New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis.</i> U.S. Army Corps of Engineers New York District. <a href='https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf'>[link]</a>"
+
+  - "Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., <strong>Rowan, S.</strong>, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). <i>Operationalizing equity for integrated water resources management.</i> JAWRA Journal of the American Water Resources Association, 59(2), 281-298. <a href='https://doi.org/10.1111/1752-1688.13086'>[DOI: 10.1111/1752-1688.13086]</a>"
+
+  - "<strong>Rowan, S.</strong>, & Kwiatkowski, K. (2020). <i>Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience.</i> Sustainability, 12(18), 7718. <a href='https://doi.org/10.3390/su12187718'>[DOI: 10.3390/su12187718]</a>"
+
+- title: Other
+  type: list
+  contents:
+    - <u>Programming Languages:</u> Python, R, MATLAB, SQL
+    - <u>Hobbies:</u> Cooking, Snowboarding, Data Analysis

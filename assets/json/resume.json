@@ -1,199 +1,193 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Sebastian Rowan",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
+    "contact": "sebastian.rowan@unh.edu",
+    "phone": "",
+    "url": "",
+    "about": "I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research, is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being rather than maximizing financial return on investment.",
     "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
+      "address": "",
+      "postalCode": "CA 03101",
+      "city": "Manchester",
       "countryCode": "US",
-      "region": "California"
+      "region": "New Hampshire"
     },
     "profiles": [
       {
         "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
+        "username": "sebasrowan",
+        "url": "https://twitter.com/sebasrowan"
       }
     ]
   },
+  "education": [
+    {
+      "institution": "University of New Hampshire",
+      "location": "Durham, NH, USA",
+      "url": "https://www.unh.edu/",
+      "area": "Civil and Environmental Engineering",
+      "studyType": "PhD",
+      "startDate": "2018",
+      "endDate": "Present",
+      "courses": [
+        "Dissertation Title: Assessment of the carbon footprint of flood damages and flood risk management projects.",
+        "Dissertation Advisor: Dr. Weiwei Mo"
+      ]
+    },
+    {
+      "institution": "University of New Hampshire",
+      "location": "Durham, NH, USA",
+      "url": "https://www.unh.edu/",
+      "area": "Environmental Engineering",
+      "studyType": "BS",
+      "startDate": "2016",
+      "endDate": "2016"
+    }
+  ],
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
+      "name": "U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory",
+      "position": "ORISE Graduate Research Fellow",
+      "startDate": "2020",
+      "endDate": "Present",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "University of New Hampshire",
+      "position": "Research and Teaching Assistant",
+      "startDate": "2018",
+      "endDate": "2020",
+      "summary": "",
+      "highlights": [
+        "Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)",
+        "CEE 502 - Project Engineering",
+        "CEE 705 - Introduction to Sustainable Engineering"
+      ]
+    },
+    {
+      "name": "New Hampshire Department of Transportation",
+      "position": "Civil Engineer I-II",
+      "startDate": "2016",
+      "endDate": "2018",
+      "summary": "",
+      "highlights": [
+        "Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)",
+        "CEE 502 - Project Engineering",
+        "CEE 705 - Introduction to Sustainable Engineering"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "sviBuildr",
+      "summary": "An R package that allows users to download or construct the <a href='https://www.atsdr.cdc.gov/placeandhealth/svi/index.html'>Social Vulnerability Index</a> as a tidyverse dataframe or as simple features dataframe for spatial analyses.",
+      "active": "true",
+      "url": "https://github.com/sebastianrowan/svibuildr"
+    },
+    {
+      "name": "NSI Data QGIS Plugin",
+      "summary": "A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.",
+      "active": "true",
+      "url": "https://github.com/sebastianrowan/get_nsi_data"
+    },
+    {
+      "name": "useeio_py",
+      "summary": "A Python translation of the USEPA's <a href='https://github.com/USEPA/useeior'>useeior</a> R package for building and using <a href='https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models'>USEEIO models</a>.",
+      "active": "true",
+      "url": "https://github.com/sebastianrowan/useeio_py"
     }
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
-    }
-  ],
-  "education": [
-    {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Nobel Prize in Physics",
-      "date": "1921-11-01",
-      "awarder": "Royal Swedish Academy of Sciences",
-      "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-      "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Machine Learning",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-location-dot"
-    },
-    {
-      "name": "Quantum Computing",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-tag"
-    },
-    {
-      "name": "Quantum Information",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-envelope"
-    },
-    {
-      "name": "Quantum Cryptography",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-hashtag"
-    },
-    {
-      "name": "Quantum Communication",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-calendar"
-    },
-    {
-      "name": "Quantum Teleportation",
-      "date": "2018-01-01",
-      "issuer": "Stanford University",
-      "url": "https://example.com",
-      "icon": "fa-solid fa-clipboard-check"
+      "organization": "Chill Foundation/YMCA of Downtown Manchester",
+      "position": "Snowboard Instructor",
+      "url": "https://www.chill.org/",
+      "startDate": "2022",
+      "endDate": "Present",
+      "summary": "Volunteer snowboard instructor for Chill Foundation's Boston/Manchester snowboard program, representing the YMCA of Downtown Manchester"
     }
   ],
   "publications": [
     {
-      "name": "Zur Elektrody/namik bewegter Körper",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": "It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source."
+      "name": "Estimating the Greenhouse Gas Emissions of Flood Damages",
+      "publisher": "Science of the Total Environment [submitted]",
+      "releaseDate": "2024",
+      "url": "",
+      "summary": "<strong>Rowan, S.</strong>, Mo, W."
     },
     {
-      "name": "Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": "In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921."
+      "name": "Integrating Future Flood Modeling and Socio-Economic Analysis in the Face of Climate Change Impacts",
+      "publisher": "Science of the Total Environment [submitted]",
+      "releaseDate": "2024",
+      "url": "",
+      "summary": "Memarsadeghi, N., <strong>Rowan, S.</strong>, Sisco, A., Tavakoly, A."
     },
     {
-      "name": "Die Grundlage der allgemeinen Relativitätstheorie",
-      "publisher": "Annalen der Physik",
-      "releaseDate": "1916-03-20",
-      "url": "https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie",
-      "summary": "The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914)."
+      "name": "Operationalizing equity for integrated water resources management",
+      "publisher": "JAWRA Journal of the American Water Resources Association",
+      "releaseDate": "2023",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/1752-1688.13086",
+      "summary": "Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., <strong>Rowan, S.</strong>, Ubiali, B., Yeates, E., & Nelson, D. R."
+    },
+    {
+      "name": "New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis",
+      "publisher": "U.S. Army Corps of Engineers New York District",
+      "releaseDate": "2022",
+      "url": "https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf",
+      "summary": "Galaitsi, S., Kurth, M., <strong>Rowan, S.</strong>, Yeates, E., & Kalaidjian, E."
+    },
+    {
+      "name": "Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience",
+      "publisher": "Sustainability",
+      "releaseDate": "2020",
+      "url": "https://www.mdpi.com/2071-1050/12/18/7718",
+      "summary": "<strong>Rowan, S.</strong>, & Kwiatkowski, K."
     }
   ],
   "skills": [
     {
-      "name": "Physics",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
+      "name": "Programming Languages",
+      "level": "",
+      "icon": "",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Python",
+        "R",
+        "MATLAB",
+        "SQL"
       ]
     }
   ],
   "languages": [
     {
-      "language": "German",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
       "language": "English",
-      "fluency": "Fluent",
+      "fluency": "Native speaker",
       "icon": ""
     }
   ],
   "interests": [
     {
-      "name": "Physics",
-      "icon": "fa-solid fa-tag",
+      "name": "Research",
+      "icon": "",
       "keywords": [
-        "Quantum Mechanics",
-        "Quantum Computing",
-        "Quantum Information",
-        "Quantum Cryptography",
-        "Quantum Communication",
-        "Quantum Teleportation"
+        "Flood Risk",
+        "Life-cycle Analysis",
+        "Community Resilience",
+        "Urban Planning",
+        "Transit/Transportation"
       ]
-    }
-  ],
-  "references": [
-    {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-laptop",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
     },
     {
-      "name": "Professor John Doe",
-      "icon": "fa-solid fa-thumbtack",
-      "reference": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit. D"
-    }
-  ],
-  "projects": [
-    {
-      "name": "Quantum Computing",
-      "summary": "Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.",
-      "highlights": ["Quantum Teleportation", "Quantum Cryptography"],
-      "startDate": "2018-01-01",
-      "endDate": "2018-01-01",
-      "url": "https://example.com"
+      "name": "Hobbies",
+      "icon": "",
+      "keywords": [
+        "Cooking",
+        "Baking",
+        "Snowboarding",
+        "Reading",
+        "Painting"
+      ]
     }
   ]
 }
