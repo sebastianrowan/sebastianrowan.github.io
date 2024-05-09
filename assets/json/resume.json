@@ -8,7 +8,7 @@
     "about": "I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research, is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being rather than maximizing financial return on investment.",
     "location": {
       "address": "",
-      "postalCode": "CA 03101",
+      "postalCode": "03101",
       "city": "Manchester",
       "countryCode": "US",
       "region": "New Hampshire"
@@ -31,7 +31,7 @@
       "startDate": "2018",
       "endDate": "Present",
       "courses": [
-        "Dissertation Title: Assessment of the carbon footprint of flood damages and flood risk management projects.",
+        "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts.",
         "Dissertation Advisor: Dr. Weiwei Mo"
       ]
     },
@@ -112,10 +112,10 @@
   "publications": [
     {
       "name": "Estimating the Greenhouse Gas Emissions of Flood Damages",
-      "publisher": "Science of the Total Environment [submitted]",
+      "publisher": "Resources, Conservation, and Recycling [submitted]",
       "releaseDate": "2024",
       "url": "",
-      "summary": "<strong>Rowan, S.</strong>, Mo, W."
+      "summary": "<strong>Rowan, S.</strong>, Bell, E., Mo, W."
     },
     {
       "name": "Integrating Future Flood Modeling and Socio-Economic Analysis in the Face of Climate Change Impacts",
