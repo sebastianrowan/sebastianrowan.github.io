@@ -194,6 +194,7 @@ exclude:
   - purgecss.config.js
   - README.md
   - vendor
+  - srowan_cv.Rmd
 keep_files:
   - CNAME
   - .nojekyll
