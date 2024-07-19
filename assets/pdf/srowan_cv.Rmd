@@ -15,14 +15,14 @@ aboutme: |
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "2698ba"
 output:
-  srvitae::sr_awesomecv:
+  vitae::awesomecv:
     keep_tex: true
   engine: xelatex
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
-library(srvitae)
+library(vitae)
 library(tibble)
 library(fontawesome)
 ```
@@ -32,11 +32,10 @@ library(fontawesome)
 \section{\faUniversity~Education}\label{education}}
 -->
 
-\hypertarget{education}{%
-\section{\faMortarBoard~Education}\label{education}}
+<!-- \hypertarget{educ}{% -->
+\section{\faMortarBoard~Education}\label{education}
 
-
-```{r Education}
+```{r Educ}
 tribble(
   ~Degree, ~Year, ~Institution, ~Where, ~details,
   "Ph.D. Candidate, Civil and Environmental Engineering", "2024 (Expected)", "University of New Hampshire", "Durham, New Hampshire", list("Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", "Advisor: Dr. Weiwei Mo"),
@@ -51,7 +50,7 @@ tribble(
   )
 ```
 
-\hypertarget{experience}{%
+\hypertarget{exp}{%
 \section{\faBriefcase~Experience}\label{experience}}
 
 ```{r Experience}
@@ -95,7 +94,7 @@ tribble(
 ```
 -->
 
-\hypertarget{open-source-projects}{%
+\hypertarget{projects}{%
 \section{\faGithub~Open Source Projects}\label{open-source-projects}}
 
 ```{r Open Source Projects}
@@ -119,12 +118,13 @@ tribble(
   )
 ```
 
-\hypertarget{publications}{%
+\hypertarget{pubs}{%
 \section{\faFileText~Publications}\label{publications}}
 
 \footnotesize
 
-<!-- - Memarsadeghi, N., **Rowan, S.**, Sisco, A., Tavakoly, A. (2024). Enhancing Resilience: Integrating Future Flood Modeling and Socio-Economic Analysis in the Face of Climate Change Impacts. Science of The Total Environment [Under Review]. -->
+- Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
+
 - Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., **Rowan, S.**, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). Operationalizing equity for integrated water resources management. JAWRA Journal of the American Water Resources Association, 59(2), 281–298. https://doi.org/10.1111/1752-1688.13086
 
 - Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis. U.S. Army Corps of Engineers New York District. https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf
@@ -133,7 +133,7 @@ tribble(
 
 \normalsize
 
-\hypertarget{presentations}{%
+\hypertarget{pres}{%
 \section{\faUser~Presentations}\label{presentations}}
 
 \footnotesize
@@ -150,32 +150,3 @@ tribble(
 
 \normalsize
 
-<!-- 
-#```{r}
-# library(dplyr)
-# library(purrr)
-
-# bold_me <- function(x) {
-#     a <- list()
-#     for(nms in x) {
-#         b <- list()
-#         for(n in nms) {
-#             if(n$family == "Rowan" & n$given == "Sebastian"){
-#                 c <- csl_name("ROWAN", "SEBASTIAN")
-#             } else {
-#                 c <- csl_name(n$family, n$given)
-#             }
-#             b <- c(b, list(c))
-#         }
-#         b <- list_of_csl_names(csl_names(b))
-#         a <- c(a, list(b))
-#     }
-#     a <- list_of_csl_names(a)
-# }
-
-# bibliography_entries("papers.bib") %>%
-#   mutate(author = bold_me(author)) %>%
-#   arrange(desc(issued))
-
-```
- -->
