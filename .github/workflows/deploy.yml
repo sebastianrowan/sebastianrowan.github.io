@@ -2,7 +2,7 @@ name: Deploy site
 
 on:
   workflow_run:
-    workflows: [prettier]
+    workflows: [Prettier code formatter]
     types: [completed]
   workflow_dispatch:
 
