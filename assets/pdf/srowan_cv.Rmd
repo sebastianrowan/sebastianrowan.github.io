@@ -144,7 +144,9 @@ tribble(
 
 - **Rowan, S.**, Yeates, E. Predicting the Mental Health Impacts of Floods. *47th Annual Natural Hazards Research and Applications Workshop; July 2022; Virtual.* Poster.
 
-- **Rowan, S.**, Kwiatkowski, K. Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. *46th Annual Natural Hazards Research and Applications Workshop; July 2020; Virtual.* Poster.
+- **Rowan, S.**, Yeates, E., Wells, E. Quantifying the Health Impacts of Floods - A Systematic Literature Review. *2021 UNC Water and Health Conference; October 2021; Virtual.* Poster.
+
+- **Rowan, S.**, Kwiatkowski, K. Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. *45th Annual Natural Hazards Research and Applications Workshop; July 2020; Virtual.* Poster.
 
 - **Rowan, S.**, Kwiatkowski, K., Qiao, Y. Resilient Bridge Planning in Mozambique: Bridge Failure Risk from Flooding and Climate Change. *2nd International Conference on Transportation System Resilience to Natural Hazards and Extreme Weather Events (TR2019); November 2019; Washington, D.C.* Oral Presentation.
 
