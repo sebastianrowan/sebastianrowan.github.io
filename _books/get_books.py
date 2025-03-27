@@ -40,6 +40,7 @@ def create_yml(row):
     if row['Gave Up']:
         status = "Gave Up"
         year = row['Date Finished'].year
+        return("") # Don't add a new row for DNF books
     elif pd.isnull(row['Date Finished']):
         status = "In Progress"
         year = row['Date Started'].year

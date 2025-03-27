@@ -57,15 +57,15 @@ tribble(
 tribble(
   ~role, ~institution, ~location, ~dates, ~details,
   "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS (Remote)", "Sep. 2020 - Present",
-  list("Contributed to research efforts to quantify impacts of floods not typically included in cost-benefit analyses for flood risk management projects.",
-       "Lead systematic literature review and metasummary to identify risk factors for mental health impacts of floods",
+  list('Contributed to research effort to quantify "Other Social Effects" of floods not typically included in cost-benefit analyses for flood risk management projects.',
+       "Lead systematic literature review and meta-analysis to identify risk factors for mental health impacts of floods",
        "Contributed to Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study",
        "Contributed to social vulnerability analysis of future flooding in the Mississippi River Valley"),
   "Research Assistant", "University of New Hampshire", "Durham, NH", "Fall 2018, Spring 2020", list("Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change", "PI: Dr. Kyle Kwiatkowski"),
   "Teaching Assisstant", "University of New Hampshire", "Durham, NH", "2019 - 2020", list("CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)", "CEE 502: Project Engineering (Spring 2019)"),
   "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "2016 - 2018", list("Contributed to the development of statewide asset management system for culvert and closed drainage systems in partnership with UNH Technology Transfer Center/SADES."),
   "10 Gigabit Ethernet Technician", "University of New Hampshire InterOperability Laboratory", "Durham, NH", "2014-2017", list(),
-  "Summer Intern", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "2015", list(),
+  "Environmental Technician", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "2015", list(),
 ) %>%
   detailed_entries(
     what = role,
@@ -76,52 +76,35 @@ tribble(
   )
 ```
 
-<!--
+
 \hypertarget{awards}{%
 \section{\faTrophy~Awards}\label{awards}}
 
 ```{r Awards}
 tribble(
-  ~award, ~when, ~description,
-  "ORISE Future of Science Award", "2023", list(
-    "Nominated"
+  ~award, ~when, ~details,
+  "UNH 3-Minute Thesis (3MT) Competition", "2025", list(
+    "3rd Place"
   )
 ) %>%
   detailed_entries(
     what = award,
-    when = when
+    when = when,
+    why = details
   )
 ```
--->
 
-\hypertarget{projects}{%
-\section{\faGithub~Open Source Projects}\label{open-source-projects}}
-
-```{r Open Source Projects}
-tribble(
-  ~project, ~stage, ~description,
-  "sviBuildr", "Active", list(
-    "An R package that allows users to download or construct the CDC's Social Vulnerability Index as a tidyverse or simple features data frame.",
-    "Enables greater flexibility in region selection for SVI analyses than is possible with state- or national-level datasets hosted by CDC."
-  ),
-  "NSI Data QGIS Plugin", "Active", list(
-    "A basic plugin for QGIS that downloads data from the USACE National Structures Inventory for a specified region and adds it to a map."
-  ),
-  "useeio_py", "Active", list(
-    "A Python translation of the USEPA's useeior R package for building and using USEEIO models for life cycle analysis."
-  )
-) %>%
-  detailed_entries(
-    what = project,
-    when = stage,
-    why = description
-  )
-```
 
 \hypertarget{pubs}{%
 \section{\faFileText~Publications}\label{publications}}
 
 \footnotesize
+
+- **Rowan, S.**, Permenter, R., Han, F., Mo, W. (Manuscript in preparation). Accounting for Building Variability in Flood Impact Estimation. 
+
+- **Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. Sustainable Cities and Society
+
+- **Rowan, S.**, Yeates, E., (2024) The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. (Protocol), PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
 
 - Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
 
@@ -138,6 +121,8 @@ tribble(
 
 \footnotesize
 
+- **Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation.
+
 - **Rowan, S.**, Memarsadeghi, N., Sisco, A., Tavakoly, A. An Assessment of the Socio-Economic Impacts from Climate Change and its Relationship with Vulnerability. *AGU23; December 2023; San Fransisco, CA.* Oral Presentation.
 
 - **Rowan, S.**, Yeates, E., Mo, W. Estimating the Greenhouse Gas Emissions of Flood Damages. *AEESP Research & Education Conference; June 2023; Boston, MA.* Poster.
@@ -152,3 +137,27 @@ tribble(
 
 \normalsize
 
+
+\hypertarget{projects}{%
+\section{\faGithub~Open Source Projects}\label{open-source-projects}}
+
+```{r Open Source Projects}
+tribble(
+  ~project, ~stage, ~description,
+  "sviBuildr", "Active", list(
+    "An R package that allows users to download or construct the CDC's Social Vulnerability Index as a tidyverse or simple features data frame.",
+    "Enables greater flexibility in region selection for SVI analyses than is possible with state- or national-level datasets hosted by CDC."
+  ),
+  "NSI Data QGIS Plugin", "Active", list(
+    "A QGIS plugin that downloads data from the USACE National Structures Inventory for a specified region and adds it to a map."
+  ),
+  "nsipy", "Active", list(
+    "A Python package to download data from the U.S. Army Corps of Engineers National Structures Inventory using the NSI API."
+  )
+) %>%
+  detailed_entries(
+    what = project,
+    when = stage,
+    why = description
+  )
+```
