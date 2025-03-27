@@ -72,11 +72,7 @@
       "startDate": "2016",
       "endDate": "2018",
       "summary": "",
-      "highlights": [
-        "Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)",
-        "CEE 502 - Project Engineering",
-        "CEE 705 - Introduction to Sustainable Engineering"
-      ]
+      "highlights": []
     }
   ],
   "awards": [
@@ -96,15 +92,15 @@
     },
     {
       "name": "NSI Data QGIS Plugin",
-      "summary": "A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.",
+      "summary": "A basic plugin for QGIS that downloads data from the <a href='https://www.hec.usace.army.mil/confluence/nsi'>National Structures Inventory</a> and adds it to a map.",
       "active": "true",
       "url": "https://github.com/sebastianrowan/get_nsi_data"
     },
     {
-      "name": "useeio_py",
-      "summary": "A Python translation of the USEPA's <a href='https://github.com/USEPA/useeior'>useeior</a> R package for building and using <a href='https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models'>USEEIO models</a>.",
+      "name": "nsipy",
+      "summary": "A Python package to download data from the U.S. Army Corps of Engineers <a href='https://www.hec.usace.army.mil/confluence/nsi'>National Structures Inventory</a> using the NSI API.",
       "active": "true",
-      "url": "https://github.com/sebastianrowan/useeio_py"
+      "url": "https://github.com/sebastianrowan/nsipy"
     }
   ],
   "volunteer": [
@@ -177,7 +173,7 @@
       "name": "Programming Languages",
       "level": "",
       "icon": "",
-      "keywords": ["Python", "R", "SQL"]
+      "keywords": ["Python", "R", "SQL", "Go"]
     }
   ],
   "languages": [
@@ -196,7 +192,7 @@
     {
       "name": "Hobbies",
       "icon": "",
-      "keywords": ["Cooking", "Baking", "Snowboarding", "Reading", "Painting"]
+      "keywords": ["Cooking", "Baking", "Snowboarding", "Reading"]
     }
   ]
 }
