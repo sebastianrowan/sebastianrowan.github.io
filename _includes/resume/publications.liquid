@@ -1,7 +1,7 @@
 <ul class="card-text font-weight-light list-group list-group-flush">
   {% assign publications = data[1] | sort: 'releaseDate' | reverse %}
   {% for content in publications %}
-    {% if content.published %}
+    {% if content.published == "true" %}
       <li class="list-group-item">
         <div class="row">
           <div class="col-xs-2 cl-sm-2 col-md-2 text-center" style="width: 75px">
