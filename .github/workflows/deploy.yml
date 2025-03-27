@@ -1,9 +1,14 @@
 name: Deploy site
 
 on:
-  workflow_run:
-    workflows: [Prettier code formatter]
-    types: [completed]
+  pull_request:
+    branches:
+      - master
+      - main
+  push:
+    branches:
+      - master
+      - main
   workflow_dispatch:
 
 permissions:
