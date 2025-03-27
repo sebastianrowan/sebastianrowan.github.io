@@ -398,12 +398,12 @@
 \newcommand{\acvHeaderAfterAddressSkip}{-.5mm}
 \newcommand{\acvHeaderIconSep}{\space}
 \newcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
-\newcommand{\acvHeaderAfterSocialSkip}{6mm}
-\newcommand{\acvHeaderAfterQuoteSkip}{5mm}
+\newcommand{\acvHeaderAfterSocialSkip}{3mm}
+\newcommand{\acvHeaderAfterQuoteSkip}{2mm}
 
 % Others
-\newcommand{\acvSectionTopSkip}{3mm}
-\newcommand{\acvSectionContentTopSkip}{2.5mm}
+\newcommand{\acvSectionTopSkip}{1mm}
+\newcommand{\acvSectionContentTopSkip}{1mm}
 
 
 %-------------------------------------------------------------------------------
@@ -609,7 +609,7 @@
   \paragraphstyle
 }{%
   \par
-  \vspace{2mm}
+  \vspace{0mm}
 }
 
 % Define an environment for cventry
@@ -703,7 +703,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{2.0mm}
+  \vspace{-4.0mm}
 }
 
 
