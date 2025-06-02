@@ -33,12 +33,12 @@ library(fontawesome)
 -->
 
 <!-- \hypertarget{educ}{% -->
-\section{\faMortarBoard~Education}\label{education}
+\section{\faGraduationCap~Education}\label{education}
 
 ```{r Educ}
 tribble(
   ~Degree, ~Year, ~Institution, ~Where, ~details,
-  "Ph.D. Candidate, Civil and Environmental Engineering", "2024 (Expected)", "University of New Hampshire", "Durham, New Hampshire", list("Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", "Advisor: Dr. Weiwei Mo"),
+  "Ph.D. Candidate, Civil and Environmental Engineering", "2025 (Expected)", "University of New Hampshire", "Durham, New Hampshire", list("Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", "Advisor: Dr. Weiwei Mo"),
   "B.S. Environmental Engineering", "2016", "University of New Hampshire", "Durham, New Hampshire", list()
 ) %>%
   detailed_entries(
@@ -57,13 +57,15 @@ tribble(
 tribble(
   ~role, ~institution, ~location, ~dates, ~details,
   "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS (Remote)", "Sep. 2020 - Present",
-  list('Contributed to research effort to quantify "Other Social Effects" of floods not typically included in cost-benefit analyses for flood risk management projects.',
-       "Lead systematic literature review and meta-analysis to identify risk factors for mental health impacts of floods",
-       "Contributed to Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study",
-       "Contributed to social vulnerability analysis of future flooding in the Mississippi River Valley"),
+  list("Contributed to the development of USACE consequence analysis tools go-consequences and Generation II Coastal Resilience  Model (G2CRM)",
+       "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley",
+       "Lead systematic literature review and meta-analysis to assess the effect of home damage on post-flood psychiatric morbidity to support USACE effort to comprehensively assess \"Other Social Effects\" of floods for planning studies",
+       "Performed data analysis using social vulnerability and other geospatial data to support Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study"
+       ),
   "Research Assistant", "University of New Hampshire", "Durham, NH", "Fall 2018, Spring 2020", list("Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change", "PI: Dr. Kyle Kwiatkowski"),
-  "Teaching Assisstant", "University of New Hampshire", "Durham, NH", "2019 - 2020", list("CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)", "CEE 502: Project Engineering (Spring 2019)"),
-  "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "2016 - 2018", list("Contributed to the development of statewide asset management system for culvert and closed drainage systems in partnership with UNH Technology Transfer Center/SADES."),
+  "Teaching Assistant", "University of New Hampshire", "Durham, NH", "2019 - 2020", list("CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)", "CEE 502: Project Engineering (Spring 2019)"),
+  "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "2016 - 2018", list("Contributed to the development of statewide asset management system for culvert and closed drainage systems in partnership with UNH Technology Transfer Center/SADES.",
+        "Developed data analysis pipelines to produce standard reports to support Department-wide operations and assess progress on key performance metrics"),
   "10 Gigabit Ethernet Technician", "University of New Hampshire InterOperability Laboratory", "Durham, NH", "2014-2017", list(),
   "Environmental Technician", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "2015", list(),
 ) %>%
@@ -96,23 +98,23 @@ tribble(
 
 
 \hypertarget{pubs}{%
-\section{\faFileText~Publications}\label{publications}}
+\section{\faFile~Publications}\label{publications}}
 
 \footnotesize
 
-- **Rowan, S.**, Permenter, R., Han, F., Mo, W. (Manuscript in preparation). Accounting for Building Variability in Flood Impact Estimation. 
+<!-- **Rowan, S.**, Permenter, R., Han, F., Mo, W. (Manuscript in preparation). Accounting for Building Variability in Flood Impact Estimation. -->
 
-- **Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. Sustainable Cities and Society
+<!-- **Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. Sustainable Cities and Society -->
 
-- **Rowan, S.**, Yeates, E., (2024) The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. (Protocol), PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
+**Rowan, S.**, Yeates, E., (2024) The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. (Protocol), PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
 
-- Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
+Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
 
-- Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., **Rowan, S.**, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). Operationalizing equity for integrated water resources management. JAWRA Journal of the American Water Resources Association, 59(2), 281–298. https://doi.org/10.1111/1752-1688.13086
+Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., **Rowan, S.**, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). Operationalizing equity for integrated water resources management. JAWRA Journal of the American Water Resources Association, 59(2), 281–298. https://doi.org/10.1111/1752-1688.13086
 
-- Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis. U.S. Army Corps of Engineers New York District. https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf
+Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis. U.S. Army Corps of Engineers New York District. https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf
 
-- **Rowan, S.**, & Kwiatkowski, K. (2020). Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. Sustainability, 12(18), 7718. https://doi.org/10.3390/su12187718
+**Rowan, S.**, & Kwiatkowski, K. (2020). Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. Sustainability, 12(18), 7718. https://doi.org/10.3390/su12187718
 
 \normalsize
 
@@ -121,19 +123,19 @@ tribble(
 
 \footnotesize
 
-- **Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation.
+**Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation. https://media.unh.edu/media/Sebastian%20Rowan%20-%20UNH%203MT%20Finals%202025%20-%20Third%20Place/1_da4qt06x 
 
-- **Rowan, S.**, Memarsadeghi, N., Sisco, A., Tavakoly, A. An Assessment of the Socio-Economic Impacts from Climate Change and its Relationship with Vulnerability. *AGU23; December 2023; San Fransisco, CA.* Oral Presentation.
+**Rowan, S.**, Memarsadeghi, N., Sisco, A., Tavakoly, A. An Assessment of the Socio-Economic Impacts from Climate Change and its Relationship with Vulnerability. *AGU23; December 2023; San Fransisco, CA.* Oral Presentation.
 
-- **Rowan, S.**, Yeates, E., Mo, W. Estimating the Greenhouse Gas Emissions of Flood Damages. *AEESP Research & Education Conference; June 2023; Boston, MA.* Poster.
+**Rowan, S.**, Yeates, E., Mo, W. Estimating the Greenhouse Gas Emissions of Flood Damages. *AEESP Research & Education Conference; June 2023; Boston, MA.* Poster.
 
-- **Rowan, S.**, Yeates, E. Predicting the Mental Health Impacts of Floods. *47th Annual Natural Hazards Research and Applications Workshop; July 2022; Virtual.* Poster.
+**Rowan, S.**, Yeates, E. Predicting the Mental Health Impacts of Floods. *47th Annual Natural Hazards Research and Applications Workshop; July 2022; Virtual.* Poster.
 
-- **Rowan, S.**, Yeates, E., Wells, E. Quantifying the Health Impacts of Floods - A Systematic Literature Review. *2021 UNC Water and Health Conference; October 2021; Virtual.* Poster.
+**Rowan, S.**, Yeates, E., Wells, E. Quantifying the Health Impacts of Floods - A Systematic Literature Review. *2021 UNC Water and Health Conference; October 2021; Virtual.* Poster.
 
-- **Rowan, S.**, Kwiatkowski, K. Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. *45th Annual Natural Hazards Research and Applications Workshop; July 2020; Virtual.* Poster.
+**Rowan, S.**, Kwiatkowski, K. Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. *45th Annual Natural Hazards Research and Applications Workshop; July 2020; Virtual.* Poster.
 
-- **Rowan, S.**, Kwiatkowski, K., Qiao, Y. Resilient Bridge Planning in Mozambique: Bridge Failure Risk from Flooding and Climate Change. *2nd International Conference on Transportation System Resilience to Natural Hazards and Extreme Weather Events (TR2019); November 2019; Washington, D.C.* Oral Presentation.
+**Rowan, S.**, Kwiatkowski, K., Qiao, Y. Resilient Bridge Planning in Mozambique: Bridge Failure Risk from Flooding and Climate Change. *2nd International Conference on Transportation System Resilience to Natural Hazards and Extreme Weather Events (TR2019); November 2019; Washington, D.C.* Oral Presentation.
 
 \normalsize
 
@@ -158,6 +160,25 @@ tribble(
   detailed_entries(
     what = project,
     when = stage,
+    why = description
+  )
+```
+
+\hypertarget{skills}{%
+\section{\faHammer~Skills}\label{skills}}
+
+```{r Skills}
+tribble(
+  ~project, ~description,
+  "Programming Languages", list(
+    "Python, R, Go, SQL, MATLAB"
+  ),
+  "Software", list(
+    "QGIS, ArcGIS, go-consequences, Vensim, NVivo"
+  )
+) %>%
+  detailed_entries(
+    what = project,
     why = description
   )
 ```
