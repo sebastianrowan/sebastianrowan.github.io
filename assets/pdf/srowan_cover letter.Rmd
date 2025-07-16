@@ -2,15 +2,15 @@
 name: Sebastian
 surname: Rowan
 position: "Ph.D Candidate in Civil and Environmental Engineering"
-pronouns: He/Him
+# pronouns: He/Him
 address: "164 Boutwell St. Manchester, NH 03102"
 www: sebastianrowan.github.io
 email: "sebastian.rowan@unh.edu"
 github: sebastianrowan
 linkedin: "sebastian-rowan-72490170"
-researchgate: false
+researchgate: "Sebastian-Rowan-2"
 orcid: false
-aboutme: "Application - Database Analyst, GIS - Humane World for Animals"
+aboutme: "Application - Research Engineer, Catastrophe Risk & Data - Verisk"
 docname: "Cover Letter"
 headcolor: "2698ba"
 output:
@@ -35,15 +35,11 @@ library(fontawesome)
 Dear Hiring Manager,  
 <br>  
 <br>  
-I am writing to express my interest in the GIS Database Analyst position with your organization, which I came across on LinkedIn. While a PhD student in civil engineering may not have been the type of applicant you expected to get for this position, I believe I am an excellent candidate with the skills and passion for animals that would make me successful in this role.
+I am writing to apply for the position of Research Engineer, Catastrophe Risk & Data which I came across on LinkedIn. My experience and research interests align perfectly with this position, and I believe I would be an excellent choice for the role.
 
-I chose civil and environmental engineering as my career path for one reason: I want to use my technical skills to make the world a better place. During undergrad this meant taking a curriculum focused primarily on water treatment and public health. However, during this time I also found I had great interest in computer science and programming. So, in my spare time, I taught myself to code and took extra classes in the CS department. Because of this, my first job out of college was with the New Hampshire Department of Transportation working as a GIS engineer.
+The focus of my doctoral research has been developing models to assess the consequences of floods. In particular, an important aspect of my research is developing consequence models that account for variation in building characteristics which are typically excluded standard damage functions (e.g. Hazus, HEC-FDA). This work relies heavily on acquiring, understanding, and analyzing data from a variety of sources to produce meaningful insights.
 
-In this role, my responsibilities included maintaining portions of the NHDOT enterprise database and integrating this database with ArcGIS and MS Excel to produce reports and analyses to ensure the DOT was meeting performance targets. I also developed custom tools in ArcGIS to manage QA processes for new data collection programs for DOT assets. I have continued to hone my GIS skills as a PhD student at UNH, where GIS analysis is crucial to nearly every aspect of my work. 
-
-As a PhD student and researcher, I currently work in the field of flood risk mitigation, and my tasks include contributing to the development of software used by the Army Corps of Engineers to assess the consequences of floods. I am passionate about this work, and I care deeply about what I do. Unfortunately, funding for my work is no longer a priority for the current administration, and I feel it is time for me to make a pivot. 
-
-I am still driven by the same goal to use my skills to make the world a better place. I believe this role with your organization will give me the opportunity to do just that. I am an animal lover with three cats, and I have followed a vegan lifestyle for the past 6 years. I believe many of the problems we face in the world today are rooted in the fact that our society sees nature, including the animals we share it with, as a resource to exploit and consume. 
+I also have a demonstrated ability to put my research into action. As a research fellow with the U.S. Army Corps of Engineers, I have contributed to the development of Corps tools used for real-world natural hazard risk and consequence analyses. Specifically, I implemented new methods in USACE's "go-consequences" tool to estimate economic losses and greenhouse gas emissions caused by flood exposure to residential buildings, accounting for building-level attributes not previously considered in existing methods. 
 
 Thank you for taking the time to review my application. I am excited about the opportunity to excel in this position, and I hope to hear from you soon!
 

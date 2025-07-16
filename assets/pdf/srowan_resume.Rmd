@@ -8,7 +8,7 @@ www: sebastianrowan.github.io
 email: "sebastian.rowan@unh.edu"
 github: sebastianrowan
 linkedin: "sebastian-rowan-72490170"
-researchgate: false
+researchgate: "Sebastian-Rowan-2"
 orcid: false
 aboutme: |
   I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being.
@@ -79,21 +79,16 @@ tribble(
     "(TA) CEE 502: Project Engineering (Spring 2019)"
   ),
   
-  "Teaching Assistant", "University of New Hampshire", "Durham, NH", "2019 - 2020", 
-  list(
-    "CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)",
-    "CEE 502: Project Engineering (Spring 2019)"
-  ),
-  
-  "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "2016 - 2018", 
+  "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "Jan 2017 - Nov. 2018", 
   list(
     "Developed automated QA/QC processes for data entered into the statewide culvert and closed drainage systems database using \\textbf{ArcGIS/Python}",
      "Developed data analysis pipelines in \\textbf{SQL and Python} to produce standard reports to support Department-wide operations and assess progress on key performance metrics",
      "Deployed to Puerto Rico as part of FEMA's Roads and Bridges Task Force during the response to Hurricanes Irma and Maria to assist with data collection and reporting of roadway asset condition and repair status"
   ),
   
-  "10 Gigabit Ethernet Technician", "University of New Hampshire InterOperability Laboratory", "Durham, NH", "2014-2017", list(),
-  "Environmental Technician", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "2015", list(),
+  "10 Gigabit Ethernet Technician", "University of New Hampshire InterOperability Laboratory", "Durham, NH", "Jun. 2014 - Dec. 2016", list(),
+  
+  "Environmental Technician", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "Summer 2015", list(),
 ) %>%
   detailed_entries(
     what = role,
