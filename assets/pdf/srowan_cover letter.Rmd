@@ -10,7 +10,7 @@ github: sebastianrowan
 linkedin: "sebastian-rowan-72490170"
 researchgate: false
 orcid: false
-aboutme: "Application - Senior Staff Environmental Data Analyst"
+aboutme: "Application - Database Analyst, GIS - Humane World for Animals"
 docname: "Cover Letter"
 headcolor: "2698ba"
 output:
@@ -32,23 +32,22 @@ library(fontawesome)
 `r format(Sys.time(), '%B, %d %Y')`  
 <br>  
 <br>  
-Geosyntec Consultants  
-10 Corporate Dr. Suite 1600  
-Bedford, NH 03110  
-<br>  
-<br>  
 Dear Hiring Manager,  
 <br>  
 <br>  
-I am writing to express my interest in the position of **Senior Staff Environmental Data Analyst**. I came across this job listing on LinkedIn and I believe I would be an excellent match for this role. 
+I am writing to express my interest in the GIS Database Analyst position with your organization, which I came across on LinkedIn. While a PhD student in civil engineering may not have been the type of applicant you expected to get for this position, I believe I am an excellent candidate with the skills and passion for animals that would make me successful in this role.
 
-Data management and data analysis have been fundamental skills throughout my professional and academic career. As a civil engineer with the NH Department of Transportation, I worked in the office of Asset Management, Performance, and Strategy where a core focus of our work was performing analyses to support operations throughout the DOT. My work in this role included developing data pipelines to produce standard reports to assess department-wide progress on performance metrics as well as to run one-off queries and analyses to answer specific questions from Department administrators. These tasks required a deep understanding of the various enterprise databases used by NHDOT and proficiency in SQL, Python, and occasionally VBA. 
+I chose civil and environmental engineering as my career path for one reason: I want to use my technical skills to make the world a better place. During undergrad this meant taking a curriculum focused primarily on water treatment and public health. However, during this time I also found I had great interest in computer science and programming. So, in my spare time, I taught myself to code and took extra classes in the CS department. Because of this, my first job out of college was with the New Hampshire Department of Transportation working as a GIS engineer.
 
-I have continued to apply and develop these data analysis skills as a PhD student at the University of New Hampshire and research fellow with the US Army Corps of Engineers. My doctoral research focuses on developing new methodologies to comprehensively quantify the risks posed by floods by accounting for impacts that are typically excluded from monetary cost-benefit analyses. Doing this work requires me to identify data from a variety of sources and bring them together in a single analysis to answer my research questions. Through my graduate work, I have also become adaptable to new tools and programming languages. As an example, I am currently working on a nation-wide flood risk analysis using a tool called go-consequences, a hazard impact tool developed by USACE and written in the Go programming language. For this analysis, I had to implement several custom features in the program, requiring me to learn to code in Go and to understand the software and its internal data patterns. In implementing the features needed for my analysis, I was also able to significantly speed up the total run time of the program and fix a bug that caused the program to crash when working on certain large datasets.
+In this role, my responsibilities included maintaining portions of the NHDOT enterprise database and integrating this database with ArcGIS and MS Excel to produce reports and analyses to ensure the DOT was meeting performance targets. I also developed custom tools in ArcGIS to manage QA processes for new data collection programs for DOT assets. I have continued to hone my GIS skills as a PhD student at UNH, where GIS analysis is crucial to nearly every aspect of my work. 
 
-Throughout my career I have developed the analytical and problem solving skills needed to succeed in this position and have a demonstrated track record of successfully applying these skills to new and unique challenges. 
+As a PhD student and researcher, I currently work in the field of flood risk mitigation, and my tasks include contributing to the development of software used by the Army Corps of Engineers to assess the consequences of floods. I am passionate about this work, and I care deeply about what I do. Unfortunately, funding for my work is no longer a priority for the current administration, and I feel it is time for me to make a pivot. 
 
-Thank you for taking the time to review my application and consider me for this position. I am excited to learn more about this opportunity and I look forward to hearing from you soon!  
+I am still driven by the same goal to use my skills to make the world a better place. I believe this role with your organization will give me the opportunity to do just that. I am an animal lover with three cats, and I have followed a vegan lifestyle for the past 6 years. I believe many of the problems we face in the world today are rooted in the fact that our society sees nature, including the animals we share it with, as a resource to exploit and consume. 
+
+Thank you for taking the time to review my application. I am excited about the opportunity to excel in this position, and I hope to hear from you soon!
+
+
 <br>  
 <br>  
 Sincerely,  

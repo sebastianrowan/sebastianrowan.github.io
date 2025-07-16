@@ -2,7 +2,7 @@
 name: Sebastian
 surname: Rowan
 position: "Ph.D Candidate in Civil and Environmental Engineering"
-pronouns: He/Him
+# pronouns: He/Him
 address: "University of New Hampshire, Durham, NH"
 www: sebastianrowan.github.io
 email: "sebastian.rowan@unh.edu"
@@ -12,6 +12,7 @@ researchgate: false
 orcid: false
 aboutme: |
   I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being.
+docname: "Resume"
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "2698ba"
 output:
@@ -41,7 +42,7 @@ tribble(
   "Ph.D. Candidate, Civil and Environmental Engineering", "2025 (Expected)", "University of New Hampshire", "Durham, New Hampshire",
   list(
     "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", 
-    "Developed model to estimate economic loss and greenhouse gas emissions from flood exposure to residential buildings using component-level fragility estimates",
+    "Developed model to estimate economic loss and greenhouse gas emissions from flood exposure to residential buildings using component-level fragility estimates in a \\textbf{Python-based} Monte-Carlo simulation",
     "Quantified expected GHG emissions from flood exposure to residential buildings under current and future climate projections in a nation-wide, multi-frequency flood risk assessment"
   ),
   "B.S. Environmental Engineering", "2016", "University of New Hampshire", "Durham, New Hampshire", list()
@@ -64,20 +65,32 @@ tribble(
   "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS (Remote)", "Sep. 2020 - Present",
   list(
     "Implemented method to estimate greenhouse gas emissions from flood damage in USACE'S \"go-consequences\" flood consequence analysis tool",
-    "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley",
+    "Developed \\textbf{Python} plug-in for USACE's Generation II Coastal Resilience  Model (G2CRM) to assess social vulnerability in project study areas",
+    "Developed \\textbf{Python} plugin for \\textbf{QGIS} to import data from the National Structures Inventory",
+    "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley using \\textbf{Python and R}",
     "Lead systematic literature review and meta-analysis to assess the effect of home damage on post-flood psychiatric morbidity to support USACE effort to comprehensively assess \"Other Social Effects\" of floods for planning studies",
-    "Performed data analysis using social vulnerability and other geospatial data to support Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study"
+    "Performed data analysis in \\textbf{Python and R} using social vulnerability and other geospatial data to support Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study"
   ),
   
-  "Research & Teaching Assistant", "University of New Hampshire", "Durham, NH", "Aug. 2018 - Dec. 2020", 
+  "Research & Teaching Assistant", "University of New Hampshire", "Durham, NH", "Aug. 2018 - Dec. 2020",
   list(
-    "(RA) Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change",
+    "(RA) Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change\n\t- Worked with stakeholders from the World Bank and the Mozambique National Roadway Agency to quantify flood risk posed to Mozamibique's national bridge portfolio under current and future climate projections using \\textbf{R, Python, and QGIS}",
     "(TA) CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)",
     "(TA) CEE 502: Project Engineering (Spring 2019)"
   ),
-
+  
+  "Teaching Assistant", "University of New Hampshire", "Durham, NH", "2019 - 2020", 
+  list(
+    "CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)",
+    "CEE 502: Project Engineering (Spring 2019)"
+  ),
+  
   "Civil Engineer I-II", "New Hampshire Department of Transportation, Bureau of Planning and Community Assistance", "Concord, NH", "2016 - 2018", 
-  list(),
+  list(
+    "Developed automated QA/QC processes for data entered into the statewide culvert and closed drainage systems database using \\textbf{ArcGIS/Python}",
+     "Developed data analysis pipelines in \\textbf{SQL and Python} to produce standard reports to support Department-wide operations and assess progress on key performance metrics",
+     "Deployed to Puerto Rico as part of FEMA's Roads and Bridges Task Force during the response to Hurricanes Irma and Maria to assist with data collection and reporting of roadway asset condition and repair status"
+  ),
   
   "10 Gigabit Ethernet Technician", "University of New Hampshire InterOperability Laboratory", "Durham, NH", "2014-2017", list(),
   "Environmental Technician", "New Hampshire Department of Environmental Services, Air Resources Division", "Concord, NH", "2015", list(),
@@ -117,19 +130,19 @@ tribble(
 
 <!-- **Rowan, S.**, Permenter, R., Han, F., Mo, W. (Manuscript in preparation). Accounting for Building Variability in Flood Impact Estimation. -->
 
-<!-- **Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. _Sustainable Cities and Society_ -->
+**Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. _Sustainable Cities and Society_
 
-<!-- Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (Manuscript in Review). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_ -->
+Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (Manuscript in Review). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_
 
 **Rowan, S.**, Yeates, E., (2024) The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. (Protocol), PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
 
-Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
+Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. _Science of the Total Environment_, https://doi.org/10.1016/j.scitotenv.2024.174893
 
 Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., **Rowan, S.**, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). Operationalizing equity for integrated water resources management. JAWRA Journal of the American Water Resources Association, 59(2), 281–298. https://doi.org/10.1111/1752-1688.13086
 
 Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis. U.S. Army Corps of Engineers New York District. https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf
 
-**Rowan, S.**, & Kwiatkowski, K. (2020). Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. Sustainability, 12(18), 7718. https://doi.org/10.3390/su12187718
+**Rowan, S.**, & Kwiatkowski, K. (2020). Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience. _Sustainability_, 12(18), 7718. https://doi.org/10.3390/su12187718
 
 \normalsize
 
@@ -138,7 +151,7 @@ Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New
 
 \footnotesize
 
-**Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation. https://media.unh.edu/media/Sebastian%20Rowan%20-%20UNH%203MT%20Finals%202025%20-%20Third%20Place/1_da4qt06x 
+**Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation. https://media.unh.edu/media/Sebastian%20Rowan%20-%20UNH%203MT%20Finals%202025%20-%20Third%20Place/1_da4qt06x
 
 **Rowan, S.**, Memarsadeghi, N., Sisco, A., Tavakoly, A. An Assessment of the Socio-Economic Impacts from Climate Change and its Relationship with Vulnerability. *AGU23; December 2023; San Fransisco, CA.* Oral Presentation.
 
@@ -186,10 +199,10 @@ tribble(
 tribble(
   ~project, ~description,
   "Programming Languages", list(
-    "Python, R, Go, SQL, MATLAB"
+    "Python, R, Go, SQL, C++, MATLAB"
   ),
   "Software", list(
-    "QGIS, ArcGIS, go-consequences, Vensim, NVivo, Excel"
+    "QGIS, ArcGIS, go-consequences, AutoRAPID, Vensim, NVivo, Excel"
   )
 ) %>%
   detailed_entries(
