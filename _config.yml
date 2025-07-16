@@ -195,6 +195,10 @@ exclude:
   - README.md
   - vendor
   - assets/pdf/srowan_cv.Rmd
+  - assets/pdf/srowan_resume.Rmd
+  - assets/pdf/srowan_resume.pdf
+  - assets/pdf/srowan_cover_letter.Rmd
+  - assets/pdf/srowan_cover_letter.pdf
 keep_files:
   - CNAME
   - .nojekyll
