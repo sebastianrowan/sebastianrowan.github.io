@@ -10,9 +10,5 @@ Gemfile.lock
 node_modules/
 vendor
 
-
-# assets/pdf
-
-# *cover*.pdf
-# *cover*.Rmd
-# *letter.Rmd
+*cover*.pdf
+*cover*.Rmd
