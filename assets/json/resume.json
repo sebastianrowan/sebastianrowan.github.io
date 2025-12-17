@@ -15,9 +15,9 @@
     },
     "profiles": [
       {
-        "network": "Twitter",
-        "username": "sebasrowan",
-        "url": "https://twitter.com/sebasrowan"
+        "network": "LinkedIn",
+        "username": "sebastian-rowan-72490170",
+        "url": "https://www.linkedin.com/in/sebastian-rowan-72490170/"
       }
     ]
   },
@@ -115,32 +115,27 @@
   ],
   "publications": [
     {
-      "name": "The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis",
-      "publisher": "Frontiers in Public Health - Environmental Health and Exposome",
+      "name": "The effects of home damage on post-flood mental health: A systematic review and meta-analysis",
+      "publisher": "npj Mental Health Research",
       "url": "TBD",
+      "releaseDate": "2026",
       "summary": "<strong>Rowan, S.</strong>, Yeates, E.",
       "published": "false"
+    },
+    {
+      "name": "Quantifying the hidden carbon cost of floods: a stochastic and uncertainty-based valuation framework",
+      "publisher": "Environmental Research Letters",
+      "releaseDate": "2025",
+      "url": "https://doi.org/10.1088/1748-9326/ae2d76",
+      "summary": "<strong>Rowan, S.</strong>, Bell, E., Mo, W.",
+      "published": "true"
     },
     {
       "name": "Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate",
       "publisher": "Global Environmental Change",
       "releaseDate": "2025",
-      "url": "TBD",
-      "summary": "Qiao, Y., Yaru, G. <strong>Rowan, S.</strong>, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z.",
-      "published": "false"
-    },
-    {
-      "name": "Accounting for Building Variability in Flood Impact Estimation",
-      "publisher": "TBD",
-      "url": "TBD",
-      "summary": "<strong>Rowan, S.</strong>, Han, F., Permenter, R., Mo, W.",
-      "published": "false"
-    },
-    {
-      "name": "Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions",
-      "publisher": "Sustainable Cities and Society",
-      "url": "TBD",
-      "summary": "<strong>Rowan, S.</strong>, Bell, E., Mo, W.",
+      "url": "",
+      "summary": "Qiao, Y., Guo, Y., <strong>Rowan, S.</strong>, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z.",
       "published": "false"
     },
     {

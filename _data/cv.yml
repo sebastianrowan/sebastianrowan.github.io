@@ -14,7 +14,7 @@
   contents:
     - title: Ph.D. Civil and Environmental Engineering
       institution: University of New Hampshire, Durham, NH
-      year: 2024 (expected)
+      year: 2026 (expected)
       description:
         - "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts."
         - "Dissertation Advisor: Dr. Weiwei Mo"
@@ -53,9 +53,9 @@
       year: Active
       description: A basic plugin for QGIS that downloads data from the National Structures Inventory and adds it to a map.
 
-    - title: <a href="https://github.com/sebastianrowan/useeio_py">useeio_py</a>
-      year: Active
-      description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models">USEEIO models</a>.
+    # - title: <a href="https://github.com/sebastianrowan/useeio_py">useeio_py</a>
+    #   year: Active
+    #   description: A Python translation of the USEPA's <a href="https://github.com/USEPA/useeior">useeior</a> R package for building and using <a href="https://www.epa.gov/land-research/us-environmentally-extended-input-output-useeio-models">USEEIO models</a>.
 
 # - title: Honors and Awards
 #   type: time_table
@@ -82,14 +82,10 @@
 - title: Selected Publications
   type: list
   contents:
-    - "Galaitsi, S., Kurth, M., <strong>Rowan, S.</strong>, Yeates, E., & Kalaidjian, E. (2022). <i>New York—New Jersey Harbor and Tributaries Coastal Storm Risk Management Feasibility Study—Tier 1 Other Social Effects/Environmental Justice Analysis.</i> U.S. Army Corps of Engineers New York District. <a href='https://www.nan.usace.army.mil/Portals/37/Appendix%20A12_Tier%201%20OSE_EJ_HATS.pdf'>[link]</a>"
-
-    - "Seigerman, C. K., McKay, S. K., Basilio, R., Biesel, S. A., Hallemeier, J., Mansur, A. V., Piercy, C., <strong>Rowan, S.</strong>, Ubiali, B., Yeates, E., & Nelson, D. R. (2023). <i>Operationalizing equity for integrated water resources management.</i> JAWRA Journal of the American Water Resources Association, 59(2), 281-298. <a href='https://doi.org/10.1111/1752-1688.13086'>[DOI: 10.1111/1752-1688.13086]</a>"
-
-    - "<strong>Rowan, S.</strong>, & Kwiatkowski, K. (2020). <i>Assessing the Relationship Between Social Vulnerability, Social Capital, and Housing Resilience.</i> Sustainability, 12(18), 7718. <a href='https://doi.org/10.3390/su12187718'>[DOI: 10.3390/su12187718]</a>"
+    - "<strong>Rowan, S.</strong>, Bell, E. & Mo, W. (2025). <i>Quantifying the hidden carbon cost of floods: a stochastic and uncertainty-based valuation framework</i> Environmental Research Letters, 2025. <a href='https://doi.org/10.1088/1748-9326/ae2d76'>[DOI: 10.1088/1748-9326/ae2d76]</a>"
 
 - title: Other
   type: list
   contents:
     - <u>Programming Languages:</u> Python, R, MATLAB, SQL
-    - <u>Hobbies:</u> Cooking, Snowboarding, Data Analysis
+    - <u>Hobbies:</u> Cooking, Snowboarding

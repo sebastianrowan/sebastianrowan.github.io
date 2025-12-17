@@ -74,7 +74,7 @@ tribble(
   
   "Research & Teaching Assistant", "University of New Hampshire", "Durham, NH", "Aug. 2018 - Dec. 2020",
   list(
-    "(RA) Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change\n\t- Worked with stakeholders from the World Bank and the Mozambique National Roadway Agency to quantify flood risk posed to Mozamibique's national bridge portfolio under current and future climate projections using \\textbf{R, Python, and QGIS}",
+    "(RA) Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change\n\t- Worked with stakeholders from the World Bank and the Mozambique National Roadway Agency to quantify flood risk posed to Mozambique's national bridge portfolio under current and future climate projections using \\textbf{R, Python, and QGIS}",
     "(TA) CEE 705: Introduction to Sustainable Engineering (Fall 2019, Fall 2020)",
     "(TA) CEE 502: Project Engineering (Spring 2019)"
   ),

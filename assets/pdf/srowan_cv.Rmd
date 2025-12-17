@@ -38,7 +38,7 @@ library(fontawesome)
 ```{r Educ}
 tribble(
   ~Degree, ~Year, ~Institution, ~Where, ~details,
-  "Ph.D. Candidate, Civil and Environmental Engineering", "2025 (Expected)", "University of New Hampshire", "Durham, New Hampshire",
+  "Ph.D. Candidate, Civil and Environmental Engineering", "2026", "University of New Hampshire", "Durham, New Hampshire",
   list(
     "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", 
     "Developed model to estimate economic loss and greenhouse gas emissions from flood exposure to residential buildings using component-level fragility estimates",
@@ -61,7 +61,7 @@ tribble(
 ```{r Experience}
 tribble(
   ~role, ~institution, ~location, ~dates, ~details,
-  "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS (Remote)", "Sep. 2020 - Present",
+  "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS", "Sep. 2020 - Present",
   list(
     "Implemented method to estimate greenhouse gas emissions from flood damage in USACE'S \"go-consequences\" flood consequence analysis tool",
     "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley",
@@ -98,9 +98,7 @@ tribble(
 ```{r Awards}
 tribble(
   ~award, ~when, ~details,
-  "UNH 3-Minute Thesis (3MT) Competition", "2025", list(
-    "3rd Place"
-  )
+  "3rd Place - UNH 3-Minute Thesis (3MT) Competition", "2025", list()
 ) %>%
   detailed_entries(
     what = award,
@@ -110,18 +108,19 @@ tribble(
 ```
 
 
+
 \hypertarget{pubs}{%
 \section{\faFile~Publications}\label{publications}}
 
 \footnotesize
 
-<!-- **Rowan, S.**, Permenter, R., Han, F., Mo, W. (Manuscript in preparation). Accounting for Building Variability in Flood Impact Estimation. -->
+**Rowan, S.**, Yeates, E. **(In Review)**. The effects of home damage on post-flood mental health: A systematic review and meta-analysis. _npj Mental Health Research_
 
-<!-- **Rowan, S.**, Bell, E. S., Mo, W., (Manuscript In Review). Economic valuation of residential flood damages considering the social cost of greenhouse gas emissions. _Sustainable Cities and Society_ -->
+**Rowan, S.**, Bell, E. S., Mo, W., (2025). Quantifying the hidden carbon cost of floods: a stochastic and uncertainty-based valuation framework. _Environmental Research Letters_, https://doi.org/10.1088/1748-9326/ae2d76
 
-<!-- Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (Manuscript in Review). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_ -->
+Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (2025). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_
 
-**Rowan, S.**, Yeates, E., (2024) The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. (Protocol), PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
+**Rowan, S.**, Yeates, E., (2024) PROTOCOL: The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
 
 Memarsadeghi, N. P., **Rowan, S.**, Sisco, A. W., Tavakoly, A. A., (2024). Enhancing resilience: Integrating future flood modeling and socio-economic analysis in the face of climate change impacts. Science of the Total Environment, https://doi.org/10.1016/j.scitotenv.2024.174893
 
@@ -137,6 +136,10 @@ Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New
 \section{\faUser~Presentations}\label{presentations}}
 
 \footnotesize
+
+**Rowan, S.**, Han, F., Permenter, R., Mo, W. Monte Carlo-Based Building Damage and Emission Functions for Assessing Flood Risks. *AGU25; December 2025; New Orleans, LA.* Oral Presentation.
+
+**Rowan, S.**, Yeates, E. The Effect of Home Damage On Post-Flood Psychiatric Morbidity: A Systematic Review and Meta-Analysis. *AGU25; December 2025; New Orleans, LA.* Oral Presentation.
 
 **Rowan, S.**, Measuring what matters for flood risk management. *University of New Hampshire 3MT (3-Minute Thesis) Competition Finals; March 2025; Durham, NH.* Oral Presentation. https://media.unh.edu/media/Sebastian%20Rowan%20-%20UNH%203MT%20Finals%202025%20-%20Third%20Place/1_da4qt06x 
 
