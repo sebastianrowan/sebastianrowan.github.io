@@ -116,9 +116,9 @@ tribble(
 
 **Rowan, S.**, Yeates, E. **(In Review)**. The effects of home damage on post-flood mental health: A systematic review and meta-analysis. _npj Mental Health Research_
 
-**Rowan, S.**, Bell, E. S., Mo, W., (2025). Quantifying the hidden carbon cost of floods: a stochastic and uncertainty-based valuation framework. _Environmental Research Letters_, https://doi.org/10.1088/1748-9326/ae2d76
+Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (2026). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_, https://doi.org/10.1016/j.gloenvcha.2025.103103
 
-Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (2025). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_, https://doi.org/10.1016/j.gloenvcha.2025.103103
+**Rowan, S.**, Bell, E. S., Mo, W., (2025). Quantifying the hidden carbon cost of floods: a stochastic and uncertainty-based valuation framework. _Environmental Research Letters_, https://doi.org/10.1088/1748-9326/ae2d76
 
 **Rowan, S.**, Yeates, E., (2024) PROTOCOL: The effect of home damage on post-flood psychiatric morbidity: A systematic review and meta-analysis. PROSPERO, https://www.crd.york.ac.uk/PROSPERO/view/CRD42024618891
 
