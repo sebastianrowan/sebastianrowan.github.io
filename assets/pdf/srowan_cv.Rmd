@@ -1,9 +1,9 @@
 ---
 name: Sebastian
 surname: Rowan
-position: "Ph.D Candidate in Civil and Environmental Engineering"
-pronouns: He/Him
-address: "University of New Hampshire, Durham, NH"
+position: "ORISE Postdoctoral Research Fellow"
+# pronouns: He/Him
+address: "USACE ERDC Coastal and Hydraulics Laboratory, Vicksburg, MS"
 www: sebastianrowan.github.io
 email: "sebastian.rowan@unh.edu"
 github: sebastianrowan
@@ -11,7 +11,7 @@ linkedin: "sebastian-rowan-72490170"
 researchgate: false
 orcid: false
 aboutme: |
-  I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being.
+  I am postdoctoral research fellow studying the impacts of flood events and climate change on people and communities. The goal of my research is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being.
 date: "`r format(Sys.time(), '%B %Y')`"
 headcolor: "2698ba"
 output:
@@ -38,11 +38,10 @@ library(fontawesome)
 ```{r Educ}
 tribble(
   ~Degree, ~Year, ~Institution, ~Where, ~details,
-  "Ph.D. Candidate, Civil and Environmental Engineering", "2026", "University of New Hampshire", "Durham, New Hampshire",
+  "Ph.D., Civil and Environmental Engineering", "September 2026", "University of New Hampshire", "Durham, New Hampshire",
   list(
-    "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts", 
-    "Developed model to estimate economic loss and greenhouse gas emissions from flood exposure to residential buildings using component-level fragility estimates",
-    "Quantified expected GHG emissions from flood exposure to residential buildings under current and future climate projections in a nation-wide, multi-frequency flood risk assessment"
+    "Dissertation Title: Quantifying Greenhouse Gas Emissions and Mental Health Impacts as Co-Benefits of Flood Risk Mitigation",
+    "Advisor: Dr. Weiwei Mo"
   ),
   "B.S. Environmental Engineering", "2016", "University of New Hampshire", "Durham, New Hampshire", list()
 ) %>%
@@ -61,11 +60,14 @@ tribble(
 ```{r Experience}
 tribble(
   ~role, ~institution, ~location, ~dates, ~details,
-  "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS", "Sep. 2020 - Present",
+  "ORISE Postdoctoral Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS", "Sep. 2026 - Present",
+  list(),
+  
+  "ORISE Graduate Research Fellow", "U.S. Army Corps of Engineers, Engineer Research Development Center", "Vicksburg, MS", "Sep. 2020 - Sep. 2026",
   list(
-    "Implemented method to estimate greenhouse gas emissions from flood damage in USACE'S \"go-consequences\" flood consequence analysis tool",
-    "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley",
+    "Contributed to the development of USACE'S \"go-consequences\" flood consequence analysis tool.",
     "Lead systematic literature review and meta-analysis to assess the effect of home damage on post-flood psychiatric morbidity to support USACE effort to comprehensively assess \"Other Social Effects\" of floods for planning studies",
+    "Co-lead economic consequence and social vulnerability analysis of future flooding in the Mississippi River Valley",
     "Performed data analysis using social vulnerability and other geospatial data to support Tier 1 Other Social Effects/Environmental Justice Analysis for the USACE New York/New Jersey Harbors and Tributaries Coastal Storm Risk Management Feasibility Study"
   ),
   
@@ -114,7 +116,7 @@ tribble(
 
 \footnotesize
 
-**Rowan, S.**, Yeates, E. **(In Review)**. The effects of home damage on post-flood mental health: A systematic review and meta-analysis. _npj Mental Health Research_
+**Rowan, S.**, Yeates, E. **(In Review)**. The effects of home damage on post-flood mental health: A systematic review and meta-analysis. _Natural Hazards Review_
 
 Qiao, Y., Guo, Y., **Rowan, S.**, Medina, R., Espinet, X., Cullen, J., Meng, F., Cao, Z. (2026). Doubling of flood-induced bridge asset failure loss in Mozambique under 2050 climate. _Global Environmental Change_, https://doi.org/10.1016/j.gloenvcha.2025.103103
 
@@ -136,6 +138,8 @@ Galaitsi, S., Kurth, M., **Rowan, S.**, Yeates, E., & Kalaidjian, E. (2022). New
 \section{\faUser~Presentations}\label{presentations}}
 
 \footnotesize
+
+Yeates, E., **Rowan, S.**, Bledsoe, B. Reconciling Flood Risk Management with Systemic Environmental Hazards. *AEES 2026 Annual Meeting; June 2026; Burlington, VT.* Poster.
 
 **Rowan, S.**, Han, F., Permenter, R., Mo, W. Monte Carlo-Based Building Damage and Emission Functions for Assessing Flood Risks. *AGU25; December 2025; New Orleans, LA.* Oral Presentation.
 
@@ -170,9 +174,6 @@ tribble(
   ),
   "NSI Data QGIS Plugin", "Active", list(
     "A QGIS plugin that downloads data from the USACE National Structures Inventory for a specified region and adds it to a map."
-  ),
-  "nsipy", "Active", list(
-    "A Python package to download data from the U.S. Army Corps of Engineers National Structures Inventory using the NSI API."
   )
 ) %>%
   detailed_entries(

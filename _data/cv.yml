@@ -7,16 +7,14 @@
       value: sebastian.rowan@unh.edu
     - name: About
       value: |
-        I am Ph.D. candidate in civil and environmental engineering researching the impacts of flood events and climate change on people and communities. The goal of my research, is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being rather than maximizing financial return on investment.
-
-- title: Education
+        I am postdoctoral research fellow studying the impacts of flood events and climate change on people and communities. The goal of my research is to develop a more comprehensive understanding of the risks posed by floods to enable the development of mitigation efforts that prioritize long-term sustainability and community well-being.
   type: time_table
   contents:
     - title: Ph.D. Civil and Environmental Engineering
       institution: University of New Hampshire, Durham, NH
-      year: 2026 (expected)
+      year: 2026
       description:
-        - "Dissertation Title: Towards Sustainable Flood Risk Management: Incorporating Uncertainty and Environmental Impacts."
+        - "Dissertation Title: Quantifying Greenhouse Gas Emissions and Mental Health Impacts as Co-Benefits of Flood Risk Mitigation"
         - "Dissertation Advisor: Dr. Weiwei Mo"
     - title: B.S. Environmental Engineering
       institution: University of New Hampshire, Durham, NH
@@ -25,18 +23,20 @@
 - title: Experience
   type: time_table
   contents:
+    - title: ORISE Postdoctoral Research Fellow
+      institution: U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory
+      year: 2026 - Present
+      description:
+    
     - title: ORISE Graduate Research Fellow
       institution: U.S. Army Corps of Engineers, Coastal Hydraulics Laboratory
-      year: 2020 - Present
+      year: 2020 - 2026
       description:
 
     - title: Research and Teaching Assistant
       institution: University of New Hampshire
       year: 2018-2020
       description:
-        - Resilient Bridge Planning in Mozambique - Bridge Failure Risk from Flooding and Climate Change (PI - Dr. Kyle Kwiatkowski)
-        - CEE 502 - Project Engineering
-        - CEE 705 - Introduction to Sustainable Engineering
 
     - title: Civil Engineer I-II
       institution: New Hampshire Department of Transportation

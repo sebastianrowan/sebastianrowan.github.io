@@ -145,9 +145,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-  books:
-    output: true
-    permalink: /books/:path/
+  # books:
+  #   output: true
+  #   permalink: /books/:path/
 
 announcements:
   enabled: true
